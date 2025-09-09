@@ -818,28 +818,56 @@
         .risk-matrix {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            margin: 20px 0;
+            gap: 25px;
+            margin: 30px 0;
         }
 
         .risk-item {
-            padding: 15px;
-            border-radius: 8px;
+            padding: 25px 20px;
+            border-radius: 12px;
             text-align: center;
-            color: white;
-            font-weight: 500;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 1.8;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+            transition: all 0.3s ease;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .risk-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+        }
+
+        .risk-item strong {
+            display: block;
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            letter-spacing: 0.5px;
+        }
+
+        .risk-item br + * {
+            margin-top: 8px;
         }
 
         .risk-high {
-            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: #ffffff;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
         }
 
         .risk-medium {
-            background: linear-gradient(135deg, #feca57, #ff9ff3);
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+            color: #ffffff;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
         }
 
         .risk-low {
-            background: linear-gradient(135deg, #48dbfb, #0abde3);
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: #ffffff;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
         }
 
         .tech-stack-section {
@@ -1875,6 +1903,38 @@
                                     <div class="metric-title">缓存命中率</div>
                                     <div class="metric-value">95%+</div>
                                     <div class="metric-desc">Redis缓存命中率</div>
+                                </div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-icon">📊</div>
+                                <div class="metric-content">
+                                    <div class="metric-title">数据库优化</div>
+                                    <div class="metric-value">< 100ms</div>
+                                    <div class="metric-desc">DM8查询响应时间</div>
+                                </div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-icon">🌐</div>
+                                <div class="metric-content">
+                                    <div class="metric-title">CDN加速</div>
+                                    <div class="metric-value">99.9%</div>
+                                    <div class="metric-desc">静态资源可用性</div>
+                                </div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-icon">⚡</div>
+                                <div class="metric-content">
+                                    <div class="metric-title">内存优化</div>
+                                    <div class="metric-value">< 80%</div>
+                                    <div class="metric-desc">系统内存使用率</div>
+                                </div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-icon">🔄</div>
+                                <div class="metric-content">
+                                    <div class="metric-title">负载均衡</div>
+                                    <div class="metric-value">99.99%</div>
+                                    <div class="metric-desc">服务高可用性</div>
                                 </div>
                             </div>
                         </div>
