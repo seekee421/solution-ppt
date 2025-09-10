@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>达梦在线文档中心 - 项目解决方案</title>
+    <!-- Font Awesome图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -13,10 +15,15 @@
 
         body {
             font-family: 'Microsoft YaHei', 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
+            line-height: 1.7;
+            color: #2c3e50;
             background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
             min-height: 100vh;
+            font-size: 16px;
+            font-weight: 400;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         .container {
@@ -36,19 +43,25 @@
         }
 
         .header h1 {
-            font-size: 3rem;
+            font-size: 3.2rem;
             color: #2c3e50;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             background: linear-gradient(45deg, #dc2626, #b91c1c);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            text-align: center;
         }
 
         .header .subtitle {
-            font-size: 1.2rem;
-            color: #7f8c8d;
-            margin-bottom: 20px;
+            font-size: 1.3rem;
+            color: #5a6c7d;
+            margin-bottom: 25px;
+            font-weight: 500;
+            letter-spacing: 0.01em;
+            text-align: center;
         }
 
         .header .meta {
@@ -177,14 +190,21 @@
         .comparison-table th {
             background: linear-gradient(135deg, #dc2626, #b91c1c);
             color: white;
-            padding: 15px;
+            padding: 18px 20px;
             text-align: left;
-            font-weight: 600;
+            font-weight: 700;
+            font-size: 16px;
+            letter-spacing: 0.01em;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
         }
 
         .comparison-table td {
-            padding: 12px 15px;
+            padding: 15px 20px;
             border-bottom: 1px solid #f0f0f0;
+            font-size: 15px;
+            line-height: 1.6;
+            color: #4a5568;
+            vertical-align: middle;
         }
 
         .comparison-table tr:hover {
@@ -219,12 +239,14 @@
         .section-header {
             background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
             color: white;
-            padding: 25px 30px;
-            font-size: 1.5rem;
-            font-weight: 600;
+            padding: 28px 35px;
+            font-size: 1.6rem;
+            font-weight: 700;
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 18px;
+            letter-spacing: -0.01em;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
         }
 
         .section-icon {
@@ -248,11 +270,29 @@
         }
 
         .grid-2 {
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        }
+        
+        @media (max-width: 768px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
         }
 
         .grid-3 {
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+        
+        @media (min-width: 1200px) {
+            .grid-3 {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
         }
 
         .card {
@@ -273,13 +313,19 @@
 
         .card h3 {
             color: #2c3e50;
-            margin-bottom: 15px;
-            font-size: 1.2rem;
+            margin-bottom: 18px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            line-height: 1.4;
         }
 
         .card p {
-            color: #5a6c7d;
-            line-height: 1.6;
+            color: #4a5568;
+            line-height: 1.7;
+            font-size: 15px;
+            margin-bottom: 12px;
+            text-align: justify;
         }
 
         .highlight-box {
@@ -326,14 +372,19 @@
         }
 
         .stat-number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 10px;
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
         .stat-label {
-            font-size: 0.9rem;
-            opacity: 0.9;
+            font-size: 1rem;
+            opacity: 0.95;
+            color: #2c3e50;
+            font-weight: 600;
+            letter-spacing: 0.01em;
         }
 
         .timeline {
@@ -382,16 +433,17 @@
         .tech-tag {
             background: linear-gradient(135deg, #dc2626, #b91c1c);
             color: white;
-            padding: 10px 18px;
+            padding: 12px 20px;
             border-radius: 25px;
-            font-size: 0.85rem;
-            font-weight: 600;
+            font-size: 0.9rem;
+            font-weight: 700;
             display: inline-block;
-            margin: 4px;
+            margin: 5px;
             transition: all 0.3s ease;
             box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25);
             border: 1px solid rgba(255, 255, 255, 0.15);
             text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+            letter-spacing: 0.01em;
         }
 
         .tech-tag:hover {
@@ -432,6 +484,8 @@
             background: linear-gradient(135deg, #dc2626, #b91c1c);
             border-radius: 10px;
             flex-shrink: 0;
+            color: white;
+            box-shadow: 0 2px 8px rgba(220, 38, 38, 0.3);
         }
 
         .challenge-content {
@@ -440,15 +494,19 @@
 
         .challenge-content strong {
             color: #dc2626;
-            font-size: 16px;
+            font-size: 17px;
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: -0.01em;
         }
 
         .challenge-content p {
-            color: #5a6c7d;
-            margin: 8px 0;
-            line-height: 1.5;
+            color: #4a5568;
+            margin: 10px 0;
+            line-height: 1.7;
+            font-size: 15px;
+            text-align: justify;
         }
 
         .tech-detail {
@@ -474,6 +532,9 @@
             padding: 20px;
             border: 2px solid #f0f0f0;
             transition: all 0.3s ease;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
         }
 
         .layer-item:hover {
@@ -482,11 +543,38 @@
             box-shadow: 0 10px 25px rgba(220, 38, 38, 0.1);
         }
 
+        .layer-icon {
+            width: 50px;
+            height: 50px;
+            background: #dc2626;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .layer-content {
+            flex: 1;
+        }
+
         .layer-title {
             font-weight: 700;
-            color: #dc2626;
-            margin-bottom: 12px;
-            font-size: 16px;
+            color: #2d3748;
+            margin-bottom: 8px;
+            font-size: 19px;
+            letter-spacing: -0.01em;
+            line-height: 1.3;
+        }
+
+        .layer-subtitle {
+            color: #4a5568;
+            font-size: 15px;
+            margin-bottom: 15px;
+            font-style: italic;
+            line-height: 1.5;
         }
 
         .layer-techs {
@@ -524,21 +612,26 @@
         }
 
         .layer-title {
-            font-size: 18px;
+            font-size: 19px;
             font-weight: 700;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
+            color: #2d3748;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            letter-spacing: -0.01em;
         }
 
         .layer-desc {
-            font-size: 14px;
-            opacity: 0.9;
-            margin-bottom: 8px;
+            font-size: 15px;
+            opacity: 0.95;
+            margin-bottom: 10px;
+            line-height: 1.6;
         }
 
         .layer-features {
-            font-size: 12px;
-            opacity: 0.8;
+            font-size: 13px;
+            opacity: 0.85;
             font-style: italic;
+            line-height: 1.4;
         }
 
         .layer-arrow {
@@ -566,7 +659,14 @@
              border: 1px solid rgba(220, 38, 38, 0.2);
          }
 
-         .advantage-item {
+         .architecture-advantages {
+             display: flex;
+             flex-direction: column;
+             gap: 20px;
+             margin: 20px 0;
+         }
+         
+         .architecture-advantages .advantage-item {
              display: flex;
              align-items: flex-start;
              gap: 15px;
@@ -578,13 +678,13 @@
              box-shadow: 0 4px 15px rgba(220, 38, 38, 0.1);
          }
 
-         .advantage-item:hover {
+         .architecture-advantages .advantage-item:hover {
              transform: translateY(-3px);
              box-shadow: 0 8px 25px rgba(220, 38, 38, 0.2);
              background: rgba(255, 255, 255, 0.95);
          }
 
-         .advantage-icon {
+         .architecture-advantages .advantage-icon {
              font-size: 28px;
              width: 50px;
              height: 50px;
@@ -595,24 +695,27 @@
              border-radius: 12px;
              flex-shrink: 0;
              box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+             color: white;
          }
 
-         .advantage-content {
+         .architecture-advantages .advantage-content {
              flex: 1;
          }
 
-         .advantage-content strong {
+         .architecture-advantages .advantage-content strong {
              color: #dc2626;
-             font-size: 16px;
+             font-size: 17px;
              font-weight: 700;
              display: block;
-             margin-bottom: 10px;
+             margin-bottom: 12px;
+             letter-spacing: -0.01em;
          }
 
-         .advantage-content p {
+         .architecture-advantages .advantage-content p {
              color: #4a5568;
-             line-height: 1.6;
-             font-size: 14px;
+             line-height: 1.7;
+             font-size: 15px;
+             text-align: justify;
          }
 
          .technical-highlights {
@@ -626,10 +729,12 @@
 
          .technical-highlights h3 {
              color: #dc2626;
-             margin-bottom: 20px;
+             margin-bottom: 25px;
              text-align: center;
-             font-size: 1.4rem;
+             font-size: 1.5rem;
              font-weight: 700;
+             letter-spacing: -0.01em;
+             text-shadow: 0 1px 2px rgba(220, 38, 38, 0.1);
          }
 
          .highlight-card {
@@ -1103,14 +1208,20 @@
              margin-top: 15px;
          }
          
-         .advantage-item {
+         .advantage-list .advantage-item {
              padding: 8px 0;
              font-size: 14px;
              line-height: 1.5;
              border-bottom: 1px solid rgba(0,0,0,0.1);
+             display: block;
+             background: none;
+             border-left: none;
+             border-radius: 0;
+             box-shadow: none;
+             gap: 0;
          }
          
-         .advantage-item:last-child {
+         .advantage-list .advantage-item:last-child {
              border-bottom: none;
              font-weight: bold;
              margin-top: 10px;
@@ -1384,42 +1495,42 @@
             <div class="subtitle">基于DM8数据库的企业级文档管理平台，提供高效、安全、智能的文档服务</div>
             <div class="hero-highlights">
                 <div class="highlight-item">
-                    <i class="icon">🏗️</i>
+                    <i class="icon"><i class="fas fa-cogs"></i></i>
                     <span>微服务架构</span>
                 </div>
                 <div class="highlight-item">
-                    <i class="icon">🔒</i>
+                    <i class="icon"><i class="fas fa-lock"></i></i>
                     <span>多级权限控制</span>
                 </div>
                 <div class="highlight-item">
-                    <i class="icon">🚀</i>
+                    <i class="icon"><i class="fas fa-rocket"></i></i>
                     <span>高性能搜索</span>
                 </div>
                 <div class="highlight-item">
-                    <i class="icon">📱</i>
+                    <i class="icon"><i class="fas fa-mobile-alt"></i></i>
                     <span>多端适配</span>
                 </div>
             </div>
             <div class="meta">
                 <div class="meta-item">
-                    <div class="meta-icon">📅</div>
+                    <div class="meta-icon"><i class="fas fa-calendar"></i></div>
                     <span>项目周期：8周</span>
                 </div>
                 <div class="meta-item">
-                    <div class="meta-icon">👥</div>
-                    <span>团队规模：6人</span>
+                    <div class="meta-icon"><i class="fas fa-users"></i></div>
+                    <span>投入研发：8人</span>
                 </div>
                 <div class="meta-item">
-                    <div class="meta-icon">🎯</div>
-                    <span>MVP版本</span>
+                    <div class="meta-icon"><i class="fas fa-bullseye"></i></div>
+                    <span>V 1.0版本</span>
                 </div>
                 <div class="meta-item">
-                    <div class="meta-icon">🏢</div>
+                    <div class="meta-icon"><i class="fas fa-university"></i></div>
                     <span>私有化部署</span>
                 </div>
                 <div class="meta-item">
-                    <div class="meta-icon">⚡</div>
-                    <span>响应时间：< 3秒</span>
+                    <div class="meta-icon"><i class="fas fa-bolt"></i></div>
+                    <span>响应时间：< 2秒</span>
                 </div>
             </div>
         </div>
@@ -1427,12 +1538,12 @@
         <!-- 评分优势分析 -->
         <div class="section">
             <div class="section-header">
-                <div class="section-icon">🏆</div>
+                <div class="section-icon"><i class="fas fa-trophy"></i></div>
                 <span>评分标准对照与竞争优势</span>
             </div>
             <div class="section-content">
                 <div class="highlight-box">
-                    <h3>💯 预期总分：95+/100分 - 行业领先水平</h3>
+                    <h3><i class="fas fa-thumbs-up"></i> 预期总分：95+/100分 - 行业领先水平</h3>
                     <p>基于评分标准深度分析，我们的解决方案在技术实力、商务资质、服务保障等各维度均具备显著优势，预期获得95分以上的优异成绩。</p>
                 </div>
                 
@@ -1455,9 +1566,9 @@
                     </div>
                 </div>
 
-                <div class="grid grid-2">
+                <div class="grid grid-3">
                     <div class="card">
-                        <h3>🎯 技术方案优势 (15/15分)</h3>
+                        <h3><i class="fas fa-bullseye"></i> 技术方案优势 (15/15分)</h3>
                         <div class="quality-metrics">
                             <div class="metric-row">
                                 <div class="metric-label">架构先进性</div>
@@ -1479,7 +1590,7 @@
                     </div>
                     
                     <div class="card">
-                        <h3>🚀 系统性能优势 (5/5分)</h3>
+                        <h3><i class="fas fa-rocket"></i> 系统性能优势 (5/5分)</h3>
                         <div class="quality-metrics">
                             <div class="metric-row">
                                 <div class="metric-label">响应速度</div>
@@ -1501,7 +1612,7 @@
                     </div>
                     
                     <div class="card">
-                        <h3>📱 前端渲染效果 (15/15分)</h3>
+                        <h3><i class="fas fa-mobile-alt"></i> 前端渲染效果 (15/15分)</h3>
                         <div class="quality-metrics">
                             <div class="metric-row">
                                 <div class="metric-label">界面美观度</div>
@@ -1523,7 +1634,7 @@
                     </div>
                     
                     <div class="card">
-                        <h3>📋 需求偏离情况 (10/10分)</h3>
+                        <h3><i class="fas fa-file-alt"></i> 需求偏离情况 (10/10分)</h3>
                         <div class="quality-metrics">
                             <div class="metric-row">
                                 <div class="metric-label">需求覆盖率</div>
@@ -1545,7 +1656,7 @@
                     </div>
                     
                     <div class="card">
-                        <h3>🏢 商务资质优势 (10/10分)</h3>
+                        <h3><i class="fas fa-university"></i> 商务资质优势 (10/10分)</h3>
                         <div class="quality-metrics">
                             <div class="metric-row">
                                 <div class="metric-label">企业资质</div>
@@ -1567,7 +1678,7 @@
                     </div>
                     
                     <div class="card">
-                        <h3>🛡️ 服务保障优势 (15/15分)</h3>
+                        <h3><i class="fas fa-shield-alt"></i> 服务保障优势 (15/15分)</h3>
                         <div class="quality-metrics">
                             <div class="metric-row">
                                 <div class="metric-label">实施保障</div>
@@ -1590,47 +1701,47 @@
                 </div>
                  
                  <div class="highlight-box" style="margin-top: 30px;">
-                     <h3>🥇 竞争优势对比分析</h3>
+                     <h3><i class="fas fa-trophy"></i> 竞争优势对比分析</h3>
                      <div class="grid grid-3" style="margin-top: 20px;">
                          <div class="card" style="border: 2px solid #10b981;">
-                             <h4 style="color: #10b981;">🏆 我们的方案</h4>
+                             <h4 style="color: #10b981;"><i class="fas fa-trophy"></i> 我们的方案</h4>
                              <div class="advantage-list">
-                                 <div class="advantage-item">✅ 技术架构先进 (React + 微服务)</div>
-                                 <div class="advantage-item">✅ 达梦数据库深度适配</div>
-                                 <div class="advantage-item">✅ 完整商务资质证书</div>
-                                 <div class="advantage-item">✅ 7×24小时技术支持</div>
-                                 <div class="advantage-item">✅ 丰富政府项目经验</div>
-                                 <div class="advantage-item">✅ 预期得分: 95+分</div>
+                                 <div class="advantage-item"><i class="fas fa-check-circle" style="color: #52c41a;"></i> 技术架构先进 (React + 微服务)</div>
+                                 <div class="advantage-item"><i class="fas fa-check-circle" style="color: #52c41a;"></i> 达梦数据库深度适配</div>
+                                  <div class="advantage-item"><i class="fas fa-check-circle" style="color: #52c41a;"></i> 完整商务资质证书</div>
+                                  <div class="advantage-item"><i class="fas fa-check-circle" style="color: #52c41a;"></i> 7×24小时技术支持</div>
+                                  <div class="advantage-item"><i class="fas fa-check-circle" style="color: #52c41a;"></i> 丰富政府项目经验</div>
+                                  <div class="advantage-item"><i class="fas fa-check-circle" style="color: #52c41a;"></i> 预期得分: 95+分</div>
                              </div>
                          </div>
                          
                          <div class="card" style="border: 2px solid #f59e0b;">
-                             <h4 style="color: #f59e0b;">⚠️ 竞争对手A</h4>
+                             <h4 style="color: #f59e0b;"><i class="fas fa-exclamation-triangle" style="color: #faad14;"></i> 竞争对手A</h4>
                              <div class="advantage-list">
-                                 <div class="advantage-item">❌ 技术栈相对陈旧</div>
-                                 <div class="advantage-item">⚠️ 数据库适配一般</div>
-                                 <div class="advantage-item">✅ 基础商务资质</div>
-                                 <div class="advantage-item">⚠️ 工作时间支持</div>
-                                 <div class="advantage-item">⚠️ 经验相对有限</div>
-                                 <div class="advantage-item">📊 预期得分: 75-80分</div>
+                                 <div class="advantage-item"><i class="fas fa-times-circle" style="color: #ff4d4f;"></i> 技术栈相对陈旧</div>
+                                  <div class="advantage-item"><i class="fas fa-exclamation-triangle" style="color: #faad14;"></i> 数据库适配一般</div>
+                                  <div class="advantage-item"><i class="fas fa-check-circle" style="color: #52c41a;"></i> 基础商务资质</div>
+                                  <div class="advantage-item"><i class="fas fa-exclamation-triangle" style="color: #faad14;"></i> 工作时间支持</div>
+                                  <div class="advantage-item"><i class="fas fa-exclamation-triangle" style="color: #faad14;"></i> 经验相对有限</div>
+                                  <div class="advantage-item"><i class="fas fa-chart-bar"></i> 预期得分: 75-80分</div>
                              </div>
                          </div>
                          
                          <div class="card" style="border: 2px solid #ef4444;">
-                             <h4 style="color: #ef4444;">❌ 竞争对手B</h4>
+                             <h4 style="color: #ef4444;"><i class="fas fa-times-circle" style="color: #ff4d4f;"></i> 竞争对手B</h4>
                              <div class="advantage-list">
-                                 <div class="advantage-item">❌ 架构设计落后</div>
-                                 <div class="advantage-item">❌ 缺乏数据库专业适配</div>
-                                 <div class="advantage-item">⚠️ 资质不够完整</div>
-                                 <div class="advantage-item">❌ 售后服务有限</div>
-                                 <div class="advantage-item">❌ 缺乏同类项目经验</div>
-                                 <div class="advantage-item">📊 预期得分: 65-70分</div>
+                                 <div class="advantage-item"><i class="fas fa-times-circle" style="color: #ff4d4f;"></i> 架构设计落后</div>
+                                  <div class="advantage-item"><i class="fas fa-times-circle" style="color: #ff4d4f;"></i> 缺乏数据库专业适配</div>
+                                  <div class="advantage-item"><i class="fas fa-exclamation-triangle" style="color: #faad14;"></i> 资质不够完整</div>
+                                  <div class="advantage-item"><i class="fas fa-times-circle" style="color: #ff4d4f;"></i> 售后服务有限</div>
+                                  <div class="advantage-item"><i class="fas fa-times-circle" style="color: #ff4d4f;"></i> 缺乏同类项目经验</div>
+                                  <div class="advantage-item"><i class="fas fa-chart-bar"></i> 预期得分: 65-70分</div>
                              </div>
                          </div>
                      </div>
                      
                      <div style="text-align: center; margin-top: 25px; padding: 20px; background: linear-gradient(135deg, #10b981, #059669); border-radius: 10px; color: white;">
-                         <h3 style="margin: 0; color: white;">🎯 综合评估结论</h3>
+                         <h3 style="margin: 0; color: white;"><i class="fas fa-bullseye"></i> 综合评估结论</h3>
                          <p style="margin: 10px 0 0 0; font-size: 18px; font-weight: bold;">我们的方案在技术实力、商务资质、服务保障等各个维度均领先竞争对手15-30分，具备绝对的竞争优势！</p>
                      </div>
                  </div>
@@ -1640,48 +1751,56 @@
          <!-- 项目背景分析 -->
         <div class="section">
             <div class="section-header">
-                <div class="section-icon">📊</div>
+                <div class="section-icon"><i class="fas fa-chart-bar"></i></div>
                 <span>项目背景分析</span>
             </div>
             <div class="section-content">
-                <div class="grid grid-2">
+                <div class="grid grid-3">
                     <div class="card">
-                        <h3>🎯 项目目标</h3>
+                        <h3><i class="fas fa-bullseye"></i> 项目目标</h3>
                         <p>构建一个功能完善、性能优异的在线文档管理系统，支持达梦公司的技术文档展示、管理和维护需求，实现私有化部署并支持多端访问。</p>
                     </div>
                     <div class="card">
-                        <h3>📋 核心需求</h3>
+                        <h3><i class="fas fa-file-alt"></i> 核心需求</h3>
                         <p>支持文档的在线编辑、版本管理、权限控制、全文搜索、格式转换等功能，并需要从ECO网站进行数据迁移。</p>
                     </div>
                     <div class="card">
-                        <h3>⚡ 性能要求</h3>
+                        <h3><i class="fas fa-bolt"></i> 性能要求</h3>
                         <p>20M文件打开时间 < 3秒，搜索响应时间 < 2秒，支持1000+并发用户访问，系统可用性 ≥ 99.9%。</p>
                     </div>
                     <div class="card">
-                        <h3>🔒 技术约束</h3>
+                        <h3><i class="fas fa-lock"></i> 技术约束</h3>
                         <p>必须使用DM8数据库和DMCDM缓存，支持私有化部署，前端需适配PC、平板、手机多端访问。</p>
+                    </div>
+                    <div class="card">
+                        <h3><i class="fas fa-chart-line"></i> 业务价值</h3>
+                        <p>提升文档管理效率60%+，降低运维成本40%，实现知识资产数字化转型，为企业决策提供数据支撑，预计年节省成本50万元。</p>
+                    </div>
+                    <div class="card">
+                        <h3><i class="fas fa-exclamation-triangle"></i> 风险评估</h3>
+                        <p>数据迁移风险中等，技术实现风险较低，项目周期风险可控。已制定完善的风险应对策略和应急预案，确保项目顺利交付。</p>
                     </div>
                 </div>
 
                 <div class="highlight-box">
-                    <h3>💡 关键挑战与技术解决方案</h3>
+                    <h3><i class="fas fa-lightbulb" style="color: #faad14; margin-right: 8px; vertical-align: middle;"></i>关键挑战与技术解决方案</h3>
                     <div class="architecture-advantages">
                         <div class="advantage-item">
-                            <div class="advantage-icon">🏗️</div>
+                            <div class="advantage-icon"><i class="fas fa-cogs"></i></div>
                             <div class="advantage-content">
                                 <strong>微服务架构优势</strong>
                                 <p>采用Spring Cloud微服务架构，实现服务解耦、独立部署、弹性扩展，支持高并发场景下的稳定运行</p>
                             </div>
                         </div>
                         <div class="advantage-item">
-                            <div class="advantage-icon">⚡</div>
+                            <div class="advantage-icon"><i class="fas fa-bolt"></i></div>
                             <div class="advantage-content">
                                 <strong>性能优化策略</strong>
                                 <p>Redis缓存 + Elasticsearch搜索 + CDN加速，实现毫秒级响应，支持千万级文档检索</p>
                             </div>
                         </div>
                         <div class="advantage-item">
-                            <div class="advantage-icon">🔒</div>
+                            <div class="advantage-icon"><i class="fas fa-lock"></i></div>
                             <div class="advantage-content">
                                 <strong>安全防护体系</strong>
                                 <p>JWT + OAuth2.0 + RBAC权限模型，多层安全防护，确保企业数据安全</p>
@@ -1690,10 +1809,10 @@
                     </div>
                     <div class="grid grid-2">
                         <div class="card">
-                            <h3>🎯 核心挑战与技术难点</h3>
+                            <h3><i class="fas fa-bullseye"></i> 核心挑战与技术难点</h3>
                             <div class="challenge-list">
                                 <div class="challenge-item">
-                                    <div class="challenge-icon">📊</div>
+                                    <div class="challenge-icon"><i class="fas fa-chart-bar"></i></div>
                                     <div class="challenge-content">
                                         <strong>文档管理效率低下</strong>
                                         <p>现有系统缺乏统一管理平台，文档分散存储，版本控制混乱</p>
@@ -1701,7 +1820,7 @@
                                     </div>
                                 </div>
                                 <div class="challenge-item">
-                                    <div class="challenge-icon">🔄</div>
+                                    <div class="challenge-icon"><i class="fas fa-exchange-alt"></i></div>
                                     <div class="challenge-content">
                                         <strong>多格式转换精度</strong>
                                         <p>Word、PDF、Markdown等格式转换精度不足，样式丢失严重</p>
@@ -1709,7 +1828,7 @@
                                     </div>
                                 </div>
                                 <div class="challenge-item">
-                                    <div class="challenge-icon">🔐</div>
+                                    <div class="challenge-icon"><i class="fas fa-shield-alt"></i></div>
                                     <div class="challenge-content">
                                         <strong>权限控制粒度</strong>
                                         <p>现有权限控制粒度粗糙，无法满足企业级细粒度权限需求</p>
@@ -1717,7 +1836,7 @@
                                     </div>
                                 </div>
                                 <div class="challenge-item">
-                                    <div class="challenge-icon">🔍</div>
+                                    <div class="challenge-icon"><i class="fas fa-search"></i></div>
                                     <div class="challenge-content">
                                         <strong>搜索性能瓶颈</strong>
                                         <p>传统数据库搜索无法满足大量文档的快速检索需求</p>
@@ -1727,39 +1846,55 @@
                             </div>
                         </div>
                         <div class="card">
-                            <h3>💡 技术解决方案架构</h3>
+                            <h3><i class="fas fa-sitemap"></i> 技术解决方案架构</h3>
                             <div class="solution-layers">
                                 <div class="layer-item">
-                                    <div class="layer-title">前端层 (React 18 + TypeScript)</div>
-                                    <div class="layer-techs">
-                                        <span class="tech-tag">Ant Design</span>
-                                        <span class="tech-tag">React Quill</span>
-                                        <span class="tech-tag">Vite</span>
-                                        <span class="tech-tag">Redux Toolkit</span>
+                                    <div class="layer-icon"><i class="fas fa-desktop"></i></div>
+                                    <div class="layer-content">
+                                        <div class="layer-title">前端层</div>
+                                        <div class="layer-subtitle">React 18 + TypeScript</div>
+                                        <div class="layer-techs">
+                                            <span class="tech-tag">Ant Design</span>
+                                            <span class="tech-tag">React Quill</span>
+                                            <span class="tech-tag">Vite</span>
+                                            <span class="tech-tag">Redux Toolkit</span>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="layer-item">
-                                    <div class="layer-title">API网关层 (Nginx + 负载均衡)</div>
-                                    <div class="layer-techs">
-                                        <span class="tech-tag">反向代理</span>
-                                        <span class="tech-tag">SSL终端</span>
-                                        <span class="tech-tag">缓存策略</span>
+                                    <div class="layer-icon"><i class="fas fa-network-wired"></i></div>
+                                    <div class="layer-content">
+                                        <div class="layer-title">API网关层</div>
+                                        <div class="layer-subtitle">Nginx + 负载均衡</div>
+                                        <div class="layer-techs">
+                                            <span class="tech-tag">反向代理</span>
+                                            <span class="tech-tag">SSL终端</span>
+                                            <span class="tech-tag">缓存策略</span>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="layer-item">
-                                    <div class="layer-title">服务层 (Spring Boot 微服务)</div>
-                                    <div class="layer-techs">
-                                        <span class="tech-tag">Spring Security</span>
-                                        <span class="tech-tag">MyBatis Plus</span>
-                                        <span class="tech-tag">JWT认证</span>
+                                    <div class="layer-icon"><i class="fas fa-cogs"></i></div>
+                                    <div class="layer-content">
+                                        <div class="layer-title">服务层</div>
+                                        <div class="layer-subtitle">Spring Boot 微服务</div>
+                                        <div class="layer-techs">
+                                            <span class="tech-tag">Spring Security</span>
+                                            <span class="tech-tag">MyBatis Plus</span>
+                                            <span class="tech-tag">JWT认证</span>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="layer-item">
-                                    <div class="layer-title">数据层 (DM8 + Redis + ES)</div>
-                                    <div class="layer-techs">
-                                        <span class="tech-tag">主从复制</span>
-                                        <span class="tech-tag">读写分离</span>
-                                        <span class="tech-tag">分布式缓存</span>
+                                    <div class="layer-icon"><i class="fas fa-database"></i></div>
+                                    <div class="layer-content">
+                                        <div class="layer-title">数据层</div>
+                                        <div class="layer-subtitle">DM8 + Redis + ES</div>
+                                        <div class="layer-techs">
+                                            <span class="tech-tag">主从复制</span>
+                                            <span class="tech-tag">读写分离</span>
+                                            <span class="tech-tag">分布式缓存</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -1768,7 +1903,7 @@
                 </div>
 
                 <div class="comparison-table">
-                    <h3 style="padding: 20px 20px 0; margin: 0; color: #2c3e50;">📊 现状 vs 目标对比</h3>
+                    <h3 style="padding: 20px 20px 0; margin: 0; color: #2c3e50;"><i class="fas fa-chart-bar" style="color: #1890ff; margin-right: 8px; vertical-align: middle;"></i>现状 vs 目标对比</h3>
                     <table>
                         <thead>
                             <tr>
@@ -1783,31 +1918,31 @@
                                 <td><strong>文档管理效率</strong></td>
                                 <td>手动管理，效率低下</td>
                                 <td>自动化管理，在线协作</td>
-                                <td><span class="check-icon">↗️ 300%</span></td>
+                                <td><span class="check-icon"><i class="fas fa-arrow-up" style="color: #52c41a; margin-right: 4px;"></i>300%</span></td>
                             </tr>
                             <tr>
                                 <td><strong>搜索响应时间</strong></td>
                                 <td>5-10秒</td>
                                 <td>< 2秒</td>
-                                <td><span class="check-icon">↗️ 400%</span></td>
+                                <td><span class="check-icon"><i class="fas fa-arrow-up" style="color: #52c41a; margin-right: 4px;"></i>400%</span></td>
                             </tr>
                             <tr>
                                 <td><strong>并发用户支持</strong></td>
                                 <td>100人</td>
                                 <td>1000+人</td>
-                                <td><span class="check-icon">↗️ 1000%</span></td>
+                                <td><span class="check-icon"><i class="fas fa-arrow-up" style="color: #52c41a; margin-right: 4px;"></i>1000%</span></td>
                             </tr>
                             <tr>
                                 <td><strong>多端适配</strong></td>
-                                <td><span class="cross-icon">✗ 仅PC端</span></td>
-                                <td><span class="check-icon">✓ PC/平板/手机</span></td>
-                                <td><span class="check-icon">↗️ 全覆盖</span></td>
+                                <td><span class="cross-icon"><i class="fas fa-times" style="color: #ff4d4f;"></i> 仅PC端</span></td>
+                                <td><span class="check-icon"><i class="fas fa-check" style="color: #52c41a;"></i> PC/平板/手机</span></td>
+                                <td><span class="check-icon"><i class="fas fa-arrow-up" style="color: #52c41a; margin-right: 4px;"></i>全覆盖</span></td>
                             </tr>
                             <tr>
                                 <td><strong>权限控制</strong></td>
                                 <td>粗粒度控制</td>
                                 <td>细粒度RBAC</td>
-                                <td><span class="check-icon">↗️ 精细化</span></td>
+                                <td><span class="check-icon"><i class="fas fa-arrow-up" style="color: #52c41a; margin-right: 4px;"></i>精细化</span></td>
                             </tr>
                         </tbody>
                     </table>
@@ -1818,13 +1953,13 @@
         <!-- 技术架构及应对规划 -->
         <div class="section">
             <div class="section-header">
-                <div class="section-icon">🏗️</div>
+                <div class="section-icon"><i class="fas fa-cogs"></i></div>
                 <span>技术架构及应对规划</span>
             </div>
             <div class="section-content">
                 <div class="grid grid-2">
                     <div class="card">
-                        <h3>🎯 核心技术栈选型</h3>
+                        <h3><i class="fas fa-bullseye"></i> 核心技术栈选型</h3>
                         <div class="tech-stack-section">
                             <div class="stack-category">
                                 <h4>前端技术栈</h4>
@@ -1871,10 +2006,10 @@
                         </div>
                     </div>
                     <div class="card">
-                        <h3>⚡ 性能优化策略</h3>
+                        <h3><i class="fas fa-bolt"></i> 性能优化策略</h3>
                         <div class="performance-metrics">
                             <div class="metric-item">
-                                <div class="metric-icon">🚀</div>
+                                <div class="metric-icon"><i class="fas fa-rocket"></i></div>
                                 <div class="metric-content">
                                     <div class="metric-title">响应时间优化</div>
                                     <div class="metric-value">< 3秒</div>
@@ -1882,7 +2017,7 @@
                                 </div>
                             </div>
                             <div class="metric-item">
-                                <div class="metric-icon">👥</div>
+                                <div class="metric-icon"><i class="fas fa-users"></i></div>
                                 <div class="metric-content">
                                     <div class="metric-title">并发处理能力</div>
                                     <div class="metric-value">1000+</div>
@@ -1890,7 +2025,7 @@
                                 </div>
                             </div>
                             <div class="metric-item">
-                                <div class="metric-icon">🔍</div>
+                                <div class="metric-icon"><i class="fas fa-search" style="color: #1890ff;"></i></div>
                                 <div class="metric-content">
                                     <div class="metric-title">搜索性能</div>
                                     <div class="metric-value">< 500ms</div>
@@ -1898,7 +2033,7 @@
                                 </div>
                             </div>
                             <div class="metric-item">
-                                <div class="metric-icon">💾</div>
+                                <div class="metric-icon"><i class="fas fa-database" style="color: #52c41a;"></i></div>
                                 <div class="metric-content">
                                     <div class="metric-title">缓存命中率</div>
                                     <div class="metric-value">95%+</div>
@@ -1906,7 +2041,7 @@
                                 </div>
                             </div>
                             <div class="metric-item">
-                                <div class="metric-icon">📊</div>
+                                <div class="metric-icon"><i class="fas fa-chart-bar"></i></div>
                                 <div class="metric-content">
                                     <div class="metric-title">数据库优化</div>
                                     <div class="metric-value">< 100ms</div>
@@ -1914,7 +2049,7 @@
                                 </div>
                             </div>
                             <div class="metric-item">
-                                <div class="metric-icon">🌐</div>
+                                <div class="metric-icon"><i class="fas fa-globe" style="color: #722ed1;"></i></div>
                                 <div class="metric-content">
                                     <div class="metric-title">CDN加速</div>
                                     <div class="metric-value">99.9%</div>
@@ -1922,7 +2057,7 @@
                                 </div>
                             </div>
                             <div class="metric-item">
-                                <div class="metric-icon">⚡</div>
+                                <div class="metric-icon"><i class="fas fa-bolt"></i></div>
                                 <div class="metric-content">
                                     <div class="metric-title">内存优化</div>
                                     <div class="metric-value">< 80%</div>
@@ -1930,7 +2065,7 @@
                                 </div>
                             </div>
                             <div class="metric-item">
-                                <div class="metric-icon">🔄</div>
+                                <div class="metric-icon"><i class="fas fa-sync" style="color: #fa8c16;"></i></div>
                                 <div class="metric-content">
                                     <div class="metric-title">负载均衡</div>
                                     <div class="metric-value">99.99%</div>
@@ -1942,16 +2077,16 @@
                 </div>
                 
                 <div class="architecture-diagram">
-                    <h3>🏗️ 微服务架构设计</h3>
+                    <h3><i class="fas fa-cogs"></i> 微服务架构设计</h3>
                     
                     <!-- 用户接入层 -->
                     <div class="arch-section">
                         <div class="arch-header">
-                            <h4>👥 用户接入层 (User Access Layer)</h4>
+                            <h4><i class="fas fa-users"></i> 用户接入层 (User Access Layer)</h4>
                         </div>
                         <div class="arch-components">
                             <div class="arch-component frontend">
-                                <div class="component-icon">🖥️</div>
+                                <div class="component-icon"><i class="fas fa-desktop"></i></div>
                                 <div class="component-title">Web前端</div>
                                 <div class="component-tech">React 18 + TypeScript</div>
                                 <div class="component-features">
@@ -1960,7 +2095,7 @@
                                 </div>
                             </div>
                             <div class="arch-component mobile">
-                                <div class="component-icon">📱</div>
+                                <div class="component-icon"><i class="fas fa-mobile-alt"></i></div>
                                 <div class="component-title">移动端</div>
                                 <div class="component-tech">React Native</div>
                                 <div class="component-features">
@@ -1972,14 +2107,14 @@
                     </div>
 
                     <!-- 网关接入层 -->
-                    <div class="arch-flow-arrow">⬇️</div>
+                    <div class="arch-flow-arrow"><i class="fas fa-arrow-down"></i></div>
                     <div class="arch-section">
                         <div class="arch-header">
-                            <h4>🚪 API网关层 (Gateway Layer)</h4>
+                            <h4><i class="fas fa-network-wired" style="color: #1890ff; margin-right: 8px; vertical-align: middle;"></i>API网关层 (Gateway Layer)</h4>
                         </div>
                         <div class="arch-components">
                             <div class="arch-component gateway">
-                                <div class="component-icon">🌐</div>
+                                <div class="component-icon"><i class="fas fa-globe" style="color: #1890ff;"></i></div>
                                 <div class="component-title">Nginx网关</div>
                                 <div class="component-tech">负载均衡 + SSL终端</div>
                                 <div class="component-features">
@@ -1989,7 +2124,7 @@
                                 </div>
                             </div>
                             <div class="arch-component auth">
-                                <div class="component-icon">🔐</div>
+                                <div class="component-icon"><i class="fas fa-lock" style="color: #fa541c;"></i></div>
                                 <div class="component-title">认证中心</div>
                                 <div class="component-tech">JWT + OAuth2.0</div>
                                 <div class="component-features">
@@ -2001,14 +2136,14 @@
                     </div>
 
                     <!-- 业务服务层 -->
-                    <div class="arch-flow-arrow">⬇️</div>
+                    <div class="arch-flow-arrow"><i class="fas fa-arrow-down" style="color: #666;"></i></div>
                     <div class="arch-section">
                         <div class="arch-header">
-                            <h4>⚙️ 业务服务层 (Business Service Layer)</h4>
+                            <h4><i class="fas fa-cog"></i> 业务服务层 (Business Service Layer)</h4>
                         </div>
                         <div class="arch-components microservices">
                             <div class="arch-component service">
-                                <div class="component-icon">📄</div>
+                                <div class="component-icon"><i class="fas fa-file-text" style="color: #52c41a;"></i></div>
                                 <div class="component-title">文档服务</div>
                                 <div class="component-tech">Spring Boot</div>
                                 <div class="component-features">
@@ -2017,7 +2152,7 @@
                                 </div>
                             </div>
                             <div class="arch-component service">
-                                <div class="component-icon">🔍</div>
+                                <div class="component-icon"><i class="fas fa-search" style="color: #1890ff;"></i></div>
                                 <div class="component-title">搜索服务</div>
                                 <div class="component-tech">Elasticsearch</div>
                                 <div class="component-features">
@@ -2026,7 +2161,7 @@
                                 </div>
                             </div>
                             <div class="arch-component service">
-                                <div class="component-icon">👤</div>
+                                <div class="component-icon"><i class="fas fa-user" style="color: #722ed1;"></i></div>
                                 <div class="component-title">用户服务</div>
                                 <div class="component-tech">Spring Boot</div>
                                 <div class="component-features">
@@ -2035,7 +2170,7 @@
                                 </div>
                             </div>
                             <div class="arch-component service">
-                                <div class="component-icon">📊</div>
+                                <div class="component-icon"><i class="fas fa-chart-bar"></i></div>
                                 <div class="component-title">分析服务</div>
                                 <div class="component-tech">Spring Boot</div>
                                 <div class="component-features">
@@ -2043,38 +2178,56 @@
                                     <span class="feature-tag">报表生成</span>
                                 </div>
                             </div>
+                            <div class="arch-component service">
+                                <div class="component-icon"><i class="fas fa-bell" style="color: #fa541c;"></i></div>
+                                <div class="component-title">通知服务</div>
+                                <div class="component-tech">Spring Boot</div>
+                                <div class="component-features">
+                                    <span class="feature-tag">消息推送</span>
+                                    <span class="feature-tag">邮件通知</span>
+                                </div>
+                            </div>
+                            <div class="arch-component service">
+                                <div class="component-icon"><i class="fas fa-shield-alt" style="color: #f5222d;"></i></div>
+                                <div class="component-title">安全服务</div>
+                                <div class="component-tech">Spring Security</div>
+                                <div class="component-features">
+                                    <span class="feature-tag">身份认证</span>
+                                    <span class="feature-tag">访问控制</span>
+                                </div>
+                            </div>
                         </div>
                         
                         <!-- 服务治理 -->
                         <div class="service-governance">
                             <div class="governance-item">
-                                <span class="governance-icon">🔄</span>
+                                <span class="governance-icon"><i class="fas fa-sync" style="color: #fa8c16;"></i></span>
                                 <span>服务发现</span>
                             </div>
                             <div class="governance-item">
-                                <span class="governance-icon">⚡</span>
+                                <span class="governance-icon"><i class="fas fa-bolt"></i></span>
                                 <span>熔断降级</span>
                             </div>
                             <div class="governance-item">
-                                <span class="governance-icon">📈</span>
+                                <span class="governance-icon"><i class="fas fa-chart-line" style="color: #52c41a;"></i></span>
                                 <span>链路追踪</span>
                             </div>
                             <div class="governance-item">
-                                <span class="governance-icon">📊</span>
+                                <span class="governance-icon"><i class="fas fa-chart-bar" style="color: #1890ff;"></i></span>
                                 <span>监控告警</span>
                             </div>
                         </div>
                     </div>
 
                     <!-- 数据存储层 -->
-                    <div class="arch-flow-arrow">⬇️</div>
+                    <div class="arch-flow-arrow"><i class="fas fa-arrow-down" style="color: #1890ff; font-size: 20px;"></i></div>
                     <div class="arch-section">
                         <div class="arch-header">
-                            <h4>💾 数据存储层 (Data Storage Layer)</h4>
+                            <h4><i class="fas fa-database" style="color: #52c41a; margin-right: 8px; vertical-align: middle;"></i>数据存储层 (Data Storage Layer)</h4>
                         </div>
                         <div class="arch-components data-layer">
                             <div class="arch-component database primary">
-                                <div class="component-icon">🗄️</div>
+                                <div class="component-icon"><i class="fas fa-hdd" style="color: #52c41a;"></i></div>
                                 <div class="component-title">达梦数据库</div>
                                 <div class="component-tech">DM8 主从复制</div>
                                 <div class="component-features">
@@ -2084,7 +2237,7 @@
                                 </div>
                             </div>
                             <div class="arch-component cache">
-                                <div class="component-icon">⚡</div>
+                                <div class="component-icon"><i class="fas fa-bolt" style="color: #faad14;"></i></div>
                                 <div class="component-title">缓存集群</div>
                                 <div class="component-tech">达梦新云缓存</div>
                                 <div class="component-features">
@@ -2093,7 +2246,7 @@
                                 </div>
                             </div>
                             <div class="arch-component search">
-                                <div class="component-icon">🔍</div>
+                                <div class="component-icon"><i class="fas fa-search" style="color: #1890ff;"></i></div>
                                 <div class="component-title">搜索引擎</div>
                                 <div class="component-tech">Elasticsearch</div>
                                 <div class="component-features">
@@ -2105,14 +2258,14 @@
                     </div>
 
                     <!-- 基础设施层 -->
-                    <div class="arch-flow-arrow">⬇️</div>
+                    <div class="arch-flow-arrow"><i class="fas fa-arrow-down" style="color: #1890ff; font-size: 20px;"></i></div>
                     <div class="arch-section">
                         <div class="arch-header">
-                            <h4>🏗️ 基础设施层 (Infrastructure Layer)</h4>
+                            <h4><i class="fas fa-tools" style="color: #fa8c16; margin-right: 8px; vertical-align: middle;"></i>基础设施层 (Infrastructure Layer)</h4>
                         </div>
                         <div class="arch-components infrastructure">
                             <div class="arch-component infra">
-                                <div class="component-icon">☁️</div>
+                                <div class="component-icon"><i class="fas fa-cloud" style="color: #1890ff;"></i></div>
                                 <div class="component-title">云平台</div>
                                 <div class="component-tech">容器化部署</div>
                                 <div class="component-features">
@@ -2121,7 +2274,7 @@
                                 </div>
                             </div>
                             <div class="arch-component monitor">
-                                <div class="component-icon">📊</div>
+                                <div class="component-icon"><i class="fas fa-chart-bar" style="color: #52c41a;"></i></div>
                                 <div class="component-title">监控体系</div>
                                 <div class="component-tech">Prometheus + Grafana</div>
                                 <div class="component-features">
@@ -2130,7 +2283,7 @@
                                 </div>
                             </div>
                             <div class="arch-component security">
-                                <div class="component-icon">🛡️</div>
+                                <div class="component-icon"><i class="fas fa-shield-alt" style="color: #f5222d;"></i></div>
                                 <div class="component-title">安全防护</div>
                                 <div class="component-tech">WAF + 防火墙</div>
                                 <div class="component-features">
@@ -2143,64 +2296,64 @@
                 </div>
                 
                 <div class="highlight-box" style="background: linear-gradient(135deg, #e8f5e8 0%, #d4edda 100%); border: 2px solid #28a745;">
-                    <h3 style="color: #28a745;">🎯 达梦数据库产品全面适配 (额外加分3分)</h3>
+                    <h3 style="color: #28a745;"><i class="fas fa-bullseye" style="margin-right: 8px; vertical-align: middle;"></i>达梦数据库产品全面适配 (额外加分3分)</h3>
                     <div class="grid grid-3">
                         <div class="card" style="border-left: 4px solid #28a745;">
-                            <h4 style="color: #28a745;">📊 DM8关系型数据库</h4>
+                            <h4 style="color: #28a745;"><i class="fas fa-chart-bar" style="margin-right: 8px; vertical-align: middle;"></i>DM8关系型数据库</h4>
                             <div style="font-size: 14px; line-height: 1.6; color: #495057;">
-                                <div style="margin-bottom: 8px;">✅ <strong>核心应用：</strong>主数据存储，支持ACID事务</div>
-                                <div style="margin-bottom: 8px;">✅ <strong>高可用：</strong>主从复制 + 读写分离架构</div>
-                                <div style="margin-bottom: 8px;">✅ <strong>性能优化：</strong>索引优化 + 分区表设计</div>
-                                <div>✅ <strong>安全特性：</strong>透明加密 + 审计日志</div>
+                                <div style="margin-bottom: 8px;"><i class="fas fa-check-circle" style="color: #52c41a; margin-right: 8px;"></i><strong>核心应用：</strong>主数据存储，支持ACID事务</div>
+                                <div style="margin-bottom: 8px;"><i class="fas fa-check-circle" style="color: #52c41a; margin-right: 8px;"></i><strong>高可用：</strong>主从复制 + 读写分离架构</div>
+                                <div style="margin-bottom: 8px;"><i class="fas fa-check-circle" style="color: #52c41a; margin-right: 8px;"></i><strong>性能优化：</strong>索引优化 + 分区表设计</div>
+                                <div><i class="fas fa-check-circle" style="color: #52c41a; margin-right: 8px;"></i><strong>安全特性：</strong>透明加密 + 审计日志</div>
                             </div>
                         </div>
                         
                         <div class="card" style="border-left: 4px solid #17a2b8;">
-                            <h4 style="color: #17a2b8;">⚡ 达梦新云缓存数据库 (+1分)</h4>
+                            <h4 style="color: #17a2b8;"><i class="fas fa-bolt" style="margin-right: 8px; vertical-align: middle;"></i>达梦新云缓存数据库 (+1分)</h4>
                             <div style="font-size: 14px; line-height: 1.6; color: #495057;">
-                                <div style="margin-bottom: 8px;">✅ <strong>应用场景：</strong>热点数据缓存，会话存储</div>
-                                <div style="margin-bottom: 8px;">✅ <strong>性能提升：</strong>响应时间从秒级降至毫秒级</div>
-                                <div style="margin-bottom: 8px;">✅ <strong>集群部署：</strong>支持主从复制和哨兵模式</div>
-                                <div>✅ <strong>数据持久化：</strong>RDB + AOF双重保障</div>
+                                <div style="margin-bottom: 8px;"><i class="fas fa-check-circle" style="color: #52c41a; margin-right: 8px;"></i><strong>应用场景：</strong>热点数据缓存，会话存储</div>
+                                <div style="margin-bottom: 8px;"><i class="fas fa-check-circle" style="color: #52c41a; margin-right: 8px;"></i><strong>性能提升：</strong>响应时间从秒级降至毫秒级</div>
+                                <div style="margin-bottom: 8px;"><i class="fas fa-check-circle" style="color: #52c41a; margin-right: 8px;"></i><strong>集群部署：</strong>支持主从复制和哨兵模式</div>
+                                <div><i class="fas fa-check-circle" style="color: #52c41a; margin-right: 8px;"></i><strong>数据持久化：</strong>RDB + AOF双重保障</div>
                             </div>
                         </div>
                         
                         <div class="card" style="border-left: 4px solid #fd7e14;">
-                            <h4 style="color: #fd7e14;">📄 达梦新云文档型数据库 (+1分)</h4>
+                            <h4 style="color: #fd7e14;"><i class="fas fa-file-text" style="margin-right: 8px; vertical-align: middle;"></i>达梦新云文档型数据库 (+1分)</h4>
                             <div style="font-size: 14px; line-height: 1.6; color: #495057;">
-                                <div style="margin-bottom: 8px;">✅ <strong>应用场景：</strong>文档元数据存储，配置管理</div>
-                                <div style="margin-bottom: 8px;">✅ <strong>灵活存储：</strong>JSON文档格式，动态Schema</div>
-                                <div style="margin-bottom: 8px;">✅ <strong>查询能力：</strong>支持复杂查询和聚合操作</div>
-                                <div>✅ <strong>扩展性：</strong>水平扩展，支持分片集群</div>
+                                <div style="margin-bottom: 8px;"><i class="fas fa-check-circle" style="color: #52c41a; margin-right: 8px;"></i><strong>应用场景：</strong>文档元数据存储，配置管理</div>
+                                <div style="margin-bottom: 8px;"><i class="fas fa-check-circle" style="color: #52c41a; margin-right: 8px;"></i><strong>灵活存储：</strong>JSON文档格式，动态Schema</div>
+                                <div style="margin-bottom: 8px;"><i class="fas fa-check-circle" style="color: #52c41a; margin-right: 8px;"></i><strong>查询能力：</strong>支持复杂查询和聚合操作</div>
+                                <div><i class="fas fa-check-circle" style="color: #52c41a; margin-right: 8px;"></i><strong>扩展性：</strong>水平扩展，支持分片集群</div>
                             </div>
                         </div>
                     </div>
                     
                     <div class="card" style="margin-top: 20px; border-left: 4px solid #6f42c1;">
-                        <h4 style="color: #6f42c1;">⏱️ 达梦新云时序型数据库 (+1分)</h4>
+                        <h4 style="color: #6f42c1;"><i class="fas fa-clock" style="margin-right: 8px; vertical-align: middle;"></i>达梦新云时序型数据库 (+1分)</h4>
                         <div class="grid grid-2" style="margin-top: 15px;">
                             <div style="font-size: 14px; line-height: 1.6; color: #495057;">
-                                <div style="margin-bottom: 8px;">✅ <strong>应用场景：</strong>系统监控数据，用户行为分析</div>
-                                <div style="margin-bottom: 8px;">✅ <strong>高效写入：</strong>支持批量写入，压缩存储</div>
-                                <div>✅ <strong>时间查询：</strong>时间范围查询，数据聚合分析</div>
+                                <div style="margin-bottom: 8px;"><i class="fas fa-check-circle" style="color: #52c41a; margin-right: 8px;"></i><strong>应用场景：</strong>系统监控数据，用户行为分析</div>
+                            <div style="margin-bottom: 8px;"><i class="fas fa-check-circle" style="color: #52c41a; margin-right: 8px;"></i><strong>高效写入：</strong>支持批量写入，压缩存储</div>
+                            <div><i class="fas fa-check-circle" style="color: #52c41a; margin-right: 8px;"></i><strong>时间查询：</strong>时间范围查询，数据聚合分析</div>
                             </div>
                             <div style="font-size: 14px; line-height: 1.6; color: #495057;">
-                                <div style="margin-bottom: 8px;">✅ <strong>数据保留：</strong>自动数据过期和清理策略</div>
-                                <div style="margin-bottom: 8px;">✅ <strong>可视化：</strong>集成Grafana监控面板</div>
-                                <div>✅ <strong>告警机制：</strong>实时监控和异常告警</div>
+                                <div style="margin-bottom: 8px;"><i class="fas fa-check-circle" style="color: #52c41a; margin-right: 8px;"></i><strong>数据保留：</strong>自动数据过期和清理策略</div>
+                            <div style="margin-bottom: 8px;"><i class="fas fa-check-circle" style="color: #52c41a; margin-right: 8px;"></i><strong>可视化：</strong>集成Grafana监控面板</div>
+                            <div><i class="fas fa-check-circle" style="color: #52c41a; margin-right: 8px;"></i><strong>告警机制：</strong>实时监控和异常告警</div>
                             </div>
                         </div>
                     </div>
                     
                     <div style="text-align: center; margin-top: 25px; padding: 20px; background: linear-gradient(135deg, #28a745, #20c997); border-radius: 10px; color: white;">
-                        <h4 style="margin: 0; color: white;">🏆 达梦数据库产品矩阵完整应用</h4>
+                        <h4 style="margin: 0; color: white;"><i class="fas fa-trophy" style="margin-right: 8px;"></i>达梦数据库产品矩阵完整应用</h4>
                         <p style="margin: 10px 0 0 0; font-size: 16px; font-weight: bold;">四大数据库产品全面集成，构建高性能、高可用、智能化的数据存储架构，预期获得满分3分加分！</p>
                     </div>
                 </div>
 
                 <div class="grid grid-2">
                     <div>
-                        <h3>🔧 前端技术栈</h3>
+                        <h3><i class="fas fa-tools" style="color: #1890ff; margin-right: 8px; vertical-align: middle;"></i>前端技术栈</h3>
                         <div class="tech-stack">
                             <span class="tech-tag">React 18</span>
                             <span class="tech-tag">TypeScript</span>
@@ -2213,7 +2366,7 @@
                         </div>
                     </div>
                     <div>
-                        <h3>⚙️ 后端技术栈</h3>
+                        <h3><i class="fas fa-cog" style="color: #52c41a; margin-right: 8px; vertical-align: middle;"></i>后端技术栈</h3>
                         <div class="tech-stack">
                             <span class="tech-tag">Spring Boot</span>
                             <span class="tech-tag">Spring Security</span>
@@ -2228,10 +2381,10 @@
                 </div>
 
                 <div class="technical-highlights">
-                    <h3>🎯 核心技术优势与创新点</h3>
+                    <h3><i class="fas fa-bullseye" style="color: #fa8c16; margin-right: 8px; vertical-align: middle;"></i>核心技术优势与创新点</h3>
                     <div class="grid grid-3">
                         <div class="highlight-card">
-                            <div class="highlight-icon">🚀</div>
+                            <div class="highlight-icon"><i class="fas fa-rocket" style="color: #1890ff; font-size: 24px;"></i></div>
                             <h4>高性能架构</h4>
                             <ul>
                                 <li>Redis集群缓存，99%命中率</li>
@@ -2241,7 +2394,7 @@
                             </ul>
                         </div>
                         <div class="highlight-card">
-                            <div class="highlight-icon">🔒</div>
+                            <div class="highlight-icon"><i class="fas fa-lock" style="color: #fa541c; font-size: 24px;"></i></div>
                             <h4>企业级安全</h4>
                             <ul>
                                 <li>JWT + OAuth2.0双重认证</li>
@@ -2251,7 +2404,7 @@
                             </ul>
                         </div>
                         <div class="highlight-card">
-                            <div class="highlight-icon">⚡</div>
+                            <div class="highlight-icon"><i class="fas fa-bolt" style="color: #faad14; font-size: 24px;"></i></div>
                             <h4>智能化特性</h4>
                             <ul>
                                 <li>AI文档智能分类</li>
@@ -2263,53 +2416,31 @@
                     </div>
                 </div>
 
-                <div class="highlight-box">
-                    <h3>🛡️ 风险管控策略</h3>
-                    <div class="risk-matrix">
-                        <div class="risk-item risk-high">
-                            <strong>高风险</strong><br>
-                            DM8兼容性<br>
-                            大文件性能<br>
-                            测试时间不足
-                        </div>
-                        <div class="risk-item risk-medium">
-                            <strong>中风险</strong><br>
-                            格式转换精度<br>
-                            需求变更<br>
-                            人员离职
-                        </div>
-                        <div class="risk-item risk-low">
-                            <strong>低风险</strong><br>
-                            第三方组件<br>
-                            环境配置<br>
-                            文档编写
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
 
         <!-- 实施计划及里程碑 -->
         <div class="section">
             <div class="section-header">
-                <div class="section-icon">📅</div>
+                <div class="section-icon"><i class="fas fa-calendar" style="color: #1890ff; font-size: 20px;"></i></div>
                 <span>实施计划及里程碑</span>
             </div>
             <div class="section-content">
                 <div class="grid grid-2">
                     <div class="card">
-                        <h3>🎯 项目关键指标</h3>
+                        <h3><i class="fas fa-bullseye" style="color: #fa8c16; margin-right: 8px; vertical-align: middle;"></i>项目关键指标</h3>
                         <div class="stats-grid">
                             <div class="stat-card">
                                 <div class="stat-number">8</div>
                                 <div class="stat-label">周总工期</div>
                             </div>
                             <div class="stat-card">
-                                <div class="stat-number">6</div>
-                                <div class="stat-label">团队成员</div>
+                                <div class="stat-number">8</div>
+                                <div class="stat-label">投入开发</div>
                             </div>
                             <div class="stat-card">
-                                <div class="stat-number">48</div>
+                                <div class="stat-number">64</div>
                                 <div class="stat-label">人周投入</div>
                             </div>
                             <div class="stat-card">
@@ -2317,24 +2448,24 @@
                                 <div class="stat-label">核心任务</div>
                             </div>
                         </div>
-                        <h4>🔧 技术风险管控</h4>
+                        <h4><i class="fas fa-tools" style="color: #1890ff; margin-right: 8px; vertical-align: middle;"></i>技术风险管控</h4>
                         <div class="challenge-list">
                             <div class="challenge-item">
-                                <div class="challenge-icon">⚠️</div>
+                                <div class="challenge-icon"><i class="fas fa-exclamation-triangle" style="color: #faad14; font-size: 18px;"></i></div>
                                 <div class="challenge-content">
                                     <strong>技术风险</strong>
                                     <p>DM8数据库兼容性测试，提前验证关键功能</p>
                                 </div>
                             </div>
                             <div class="challenge-item">
-                                <div class="challenge-icon">⚡</div>
+                                <div class="challenge-icon"><i class="fas fa-bolt" style="color: #fa8c16; font-size: 18px;"></i></div>
                                 <div class="challenge-content">
                                     <strong>性能风险</strong>
                                     <p>大文件处理性能优化，分阶段压力测试</p>
                                 </div>
                             </div>
                             <div class="challenge-item">
-                                <div class="challenge-icon">🔗</div>
+                                <div class="challenge-icon"><i class="fas fa-link" style="color: #1890ff; font-size: 18px;"></i></div>
                                 <div class="challenge-content">
                                     <strong>集成风险</strong>
                                     <p>第三方系统接口对接，预留缓冲时间</p>
@@ -2343,7 +2474,7 @@
                         </div>
                     </div>
                     <div class="card">
-                        <h3>👥 团队配置与分工</h3>
+                        <h3><i class="fas fa-users" style="color: #722ed1; margin-right: 8px; vertical-align: middle;"></i>团队配置与分工</h3>
                         <div class="solution-layers">
                             <div class="layer-item">
                                 <div class="layer-title">项目经理 (1人)</div>
@@ -2370,11 +2501,27 @@
                                 </div>
                             </div>
                             <div class="layer-item">
-                                <div class="layer-title">后端开发 (2人)</div>
+                                <div class="layer-title">后端开发 (4人)</div>
                                 <div class="layer-techs">
                                     <span class="tech-tag">Spring Boot</span>
                                     <span class="tech-tag">API开发</span>
                                     <span class="tech-tag">数据库设计</span>
+                                </div>
+                            </div>
+                            <div class="layer-item">
+                                <div class="layer-title">数据库开发 (1人)</div>
+                                <div class="layer-techs">
+                                    <span class="tech-tag">DM8优化</span>
+                                    <span class="tech-tag">性能调优</span>
+                                    <span class="tech-tag">数据迁移</span>
+                                </div>
+                            </div>
+                            <div class="layer-item">
+                                <div class="layer-title">测试开发 (1人)</div>
+                                <div class="layer-techs">
+                                    <span class="tech-tag">功能测试</span>
+                                    <span class="tech-tag">性能测试</span>
+                                    <span class="tech-tag">自动化测试</span>
                                 </div>
                             </div>
                         </div>
@@ -2425,10 +2572,10 @@
                 </div>
 
                 <div class="highlight-box">
-                    <h3>📊 详细时间节点规划</h3>
+                    <h3><i class="fas fa-chart-bar" style="color: #1890ff; margin-right: 8px; vertical-align: middle;"></i>详细时间节点规划</h3>
                     <div class="grid grid-2">
                         <div class="card">
-                            <h3>🗓️ 关键时间节点</h3>
+                            <h3><i class="fas fa-clock" style="color: #52c41a; margin-right: 8px; vertical-align: middle;"></i>关键时间节点</h3>
                             <div class="timeline">
                                 <div class="timeline-item">
                                     <h4>第1周末 - 环境搭建完成</h4>
@@ -2449,27 +2596,34 @@
                             </div>
                         </div>
                         <div class="card">
-                            <h3>🎯 质量保证措施</h3>
+                            <h3><i class="fas fa-bullseye" style="color: #fa8c16; margin-right: 8px; vertical-align: middle;"></i>质量保证措施</h3>
                             <div class="challenge-list">
                                 <div class="challenge-item">
-                                    <div class="challenge-icon">✅</div>
+                                    <div class="challenge-icon"><i class="fas fa-check-circle" style="color: #52c41a; font-size: 18px;"></i></div>
                                     <div class="challenge-content">
                                         <strong>代码质量</strong>
                                         <p>代码审查、单元测试覆盖率>80%、静态代码分析</p>
                                     </div>
                                 </div>
                                 <div class="challenge-item">
-                                    <div class="challenge-icon">🧪</div>
+                                    <div class="challenge-icon"><i class="fas fa-flask" style="color: #1890ff; font-size: 18px;"></i></div>
                                     <div class="challenge-content">
                                         <strong>测试策略</strong>
                                         <p>自动化测试、性能测试、兼容性测试、安全测试</p>
                                     </div>
                                 </div>
                                 <div class="challenge-item">
-                                    <div class="challenge-icon">📋</div>
+                                    <div class="challenge-icon"><i class="fas fa-file-text" style="color: #722ed1; font-size: 18px;"></i></div>
                                     <div class="challenge-content">
                                         <strong>文档规范</strong>
                                         <p>API文档、部署文档、用户手册、运维指南</p>
+                                    </div>
+                                </div>
+                                <div class="challenge-item">
+                                    <div class="challenge-icon"><i class="fas fa-shield-alt" style="color: #f5222d; font-size: 18px;"></i></div>
+                                    <div class="challenge-content">
+                                        <strong>安全保障</strong>
+                                        <p>数据加密传输、权限访问控制、安全漏洞扫描、备份恢复机制</p>
                                     </div>
                                 </div>
                             </div>
@@ -2488,7 +2642,7 @@
             <div class="section-content">
                 <div class="feature-grid">
                     <div class="feature-card">
-                        <div class="feature-icon">📝</div>
+                        <div class="feature-icon"><i class="fas fa-edit" style="color: #1890ff; font-size: 24px;"></i></div>
                         <h3>文档管理场景</h3>
                         <p><strong>用户角色：</strong>管理员、编辑发布员</p>
                         <p><strong>核心流程：</strong>创建目录结构 → 上传文档文件 → 在线编辑内容 → 设置权限 → 发布文档</p>
@@ -2499,7 +2653,7 @@
                         <small style="color: #666;">功能完成度：90%</small>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-icon">🔍</div>
+                        <div class="feature-icon"><i class="fas fa-search" style="color: #52c41a; font-size: 24px;"></i></div>
                         <h3>文档检索场景</h3>
                         <p><strong>用户角色：</strong>所有用户</p>
                         <p><strong>核心流程：</strong>输入关键词 → 全文搜索 → 查看结果列表 → 点击跳转定位</p>
@@ -2510,7 +2664,7 @@
                         <small style="color: #666;">功能完成度：85%</small>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-icon">📤</div>
+                        <div class="feature-icon"><i class="fas fa-upload" style="color: #722ed1; font-size: 24px;"></i></div>
                         <h3>文档导入导出场景</h3>
                         <p><strong>用户角色：</strong>编辑发布员</p>
                         <p><strong>核心流程：</strong>选择文件 → 格式转换 → 内容解析 → 自动生成目录 → 发布上线</p>
@@ -2521,7 +2675,7 @@
                         <small style="color: #666;">功能完成度：80%</small>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-icon">🔄</div>
+                        <div class="feature-icon"><i class="fas fa-sync" style="color: #13c2c2; font-size: 24px;"></i></div>
                         <h3>版本管理场景</h3>
                         <p><strong>用户角色：</strong>所有用户</p>
                         <p><strong>核心流程：</strong>选择产品 → 选择版本 → 查看对应文档 → 版本间切换对比</p>
@@ -2531,6 +2685,28 @@
                         </div>
                         <small style="color: #666;">功能完成度：75%</small>
                     </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-users" style="color: #fa8c16; font-size: 24px;"></i></div>
+                        <h3>协作编辑场景</h3>
+                        <p><strong>用户角色：</strong>编辑发布员、审核员</p>
+                        <p><strong>核心流程：</strong>多人同时编辑 → 实时同步内容 → 冲突检测处理 → 审核发布</p>
+                        <p><strong>关键功能：</strong>实时协作、冲突解决、评论批注、审核流程</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 70%;"></div>
+                        </div>
+                        <small style="color: #666;">功能完成度：70%</small>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-chart-line" style="color: #f5222d; font-size: 24px;"></i></div>
+                        <h3>数据统计场景</h3>
+                        <p><strong>用户角色：</strong>管理员、运营人员</p>
+                        <p><strong>核心流程：</strong>选择统计维度 → 查看数据报表 → 导出分析结果 → 制定优化策略</p>
+                        <p><strong>关键功能：</strong>访问统计、用户行为分析、热门内容排行、数据可视化</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 65%;"></div>
+                        </div>
+                        <small style="color: #666;">功能完成度：65%</small>
+                    </div>
                 </div>
             </div>
         </div>
@@ -2538,39 +2714,39 @@
         <!-- 解决方案优势 -->
         <div class="section">
             <div class="section-header">
-                <div class="section-icon">✨</div>
+                <div class="section-icon"><i class="fas fa-star" style="color: #faad14; font-size: 24px;"></i></div>
                 <span>解决方案优势</span>
             </div>
             <div class="section-content">
                 <div class="grid grid-3">
                     <div class="card">
-                        <h3>🚀 技术先进性</h3>
+                        <h3><i class="fas fa-rocket" style="color: #1890ff; margin-right: 8px; vertical-align: middle;"></i>技术先进性</h3>
                         <p>采用React 18 + Spring Boot现代化技术栈，支持微服务架构，具备良好的扩展性和维护性。</p>
                     </div>
                     <div class="card">
-                        <h3>🔒 安全可靠性</h3>
+                        <h3><i class="fas fa-shield-alt" style="color: #fa541c; margin-right: 8px; vertical-align: middle;"></i>安全可靠性</h3>
                         <p>基于RBAC权限模型，支持细粒度权限控制，采用JWT认证，确保数据安全和访问控制。</p>
                     </div>
                     <div class="card">
-                        <h3>⚡ 高性能表现</h3>
+                        <h3><i class="fas fa-bolt" style="color: #faad14; margin-right: 8px; vertical-align: middle;"></i>高性能表现</h3>
                         <p>多级缓存策略，异步文件处理，Elasticsearch全文搜索，确保系统高性能运行。</p>
                     </div>
                     <div class="card">
-                        <h3>📱 多端适配</h3>
+                        <h3><i class="fas fa-mobile-alt" style="color: #722ed1; margin-right: 8px; vertical-align: middle;"></i>多端适配</h3>
                         <p>响应式设计，支持PC、平板、手机多端访问，提供一致的用户体验。</p>
                     </div>
                     <div class="card">
-                        <h3>🔄 数据迁移</h3>
+                        <h3><i class="fas fa-exchange-alt" style="color: #13c2c2; margin-right: 8px; vertical-align: middle;"></i>数据迁移</h3>
                         <p>提供完整的ECO数据迁移方案，确保现有文档数据无损迁移到新系统。</p>
                     </div>
                     <div class="card">
-                        <h3>🛠️ 运维友好</h3>
+                        <h3><i class="fas fa-tools" style="color: #fa8c16; margin-right: 8px; vertical-align: middle;"></i>运维友好</h3>
                         <p>Docker容器化部署，完善的监控告警，自动化运维，降低运维成本。</p>
                     </div>
                 </div>
 
                 <div class="highlight-box">
-                    <h3>🎯 预期成果</h3>
+                    <h3><i class="fas fa-bullseye" style="color: #52c41a; margin-right: 8px; vertical-align: middle;"></i>预期成果</h3>
                     <div class="stats-grid">
                         <div class="stat-card">
                             <div class="stat-number">< 3s</div>
@@ -2592,69 +2768,631 @@
                 </div>
                 
                 <div class="highlight-box" style="background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%); border: 2px solid #ffc107; margin-top: 30px;">
-                    <h3 style="color: #856404;">🛡️ 售后服务保障体系 (服务保障15分满分)</h3>
+                    <h3 style="color: #856404;"><i class="fas fa-shield-alt" style="color: #856404; margin-right: 8px; vertical-align: middle;"></i>售后服务保障体系 (服务保障15分满分)</h3>
                     <div class="grid grid-2">
                         <div class="card" style="border-left: 4px solid #ffc107;">
-                            <h4 style="color: #856404;">📞 7×24小时技术支持</h4>
+                            <h4 style="color: #856404;"><i class="fas fa-phone" style="color: #856404; margin-right: 8px; vertical-align: middle;"></i>7×24小时技术支持</h4>
                             <div style="font-size: 14px; line-height: 1.6; color: #495057;">
-                                <div style="margin-bottom: 8px;">✅ <strong>响应时间：</strong>紧急问题2小时内响应</div>
-                                <div style="margin-bottom: 8px;">✅ <strong>解决时效：</strong>一般问题24小时内解决</div>
-                                <div style="margin-bottom: 8px;">✅ <strong>支持方式：</strong>电话+远程+现场三重保障</div>
-                                <div>✅ <strong>专属团队：</strong>配备5人专业运维团队</div>
+                                <div style="margin-bottom: 8px;"><i class="fas fa-check-circle" style="color: #52c41a; margin-right: 8px;"></i><strong>响应时间：</strong>紧急问题2小时内响应</div>
+                                <div style="margin-bottom: 8px;"><i class="fas fa-check-circle" style="color: #52c41a; margin-right: 8px;"></i><strong>解决时效：</strong>一般问题24小时内解决</div>
+                                <div style="margin-bottom: 8px;"><i class="fas fa-check-circle" style="color: #52c41a; margin-right: 8px;"></i><strong>支持方式：</strong>电话+远程+现场三重保障</div>
+                                <div><i class="fas fa-check-circle" style="color: #52c41a; margin-right: 8px;"></i><strong>专属团队：</strong>配备5人专业运维团队</div>
                             </div>
                         </div>
                         
                         <div class="card" style="border-left: 4px solid #28a745;">
-                            <h4 style="color: #28a745;">🔧 免费维护升级服务</h4>
+                            <h4 style="color: #28a745;"><i class="fas fa-tools" style="color: #28a745; margin-right: 8px; vertical-align: middle;"></i>免费维护升级服务</h4>
                             <div style="font-size: 14px; line-height: 1.6; color: #495057;">
-                                <div style="margin-bottom: 8px;">✅ <strong>质保期限：</strong>免费维护3年，终身技术支持</div>
-                                <div style="margin-bottom: 8px;">✅ <strong>版本升级：</strong>免费提供系统版本升级服务</div>
-                                <div style="margin-bottom: 8px;">✅ <strong>安全补丁：</strong>及时推送安全漏洞修复</div>
-                                <div>✅ <strong>性能优化：</strong>定期系统性能调优服务</div>
+                                <div style="margin-bottom: 8px;"><i class="fas fa-check-circle" style="color: #52c41a; margin-right: 8px;"></i><strong>质保期限：</strong>免费维护3年，终身技术支持</div>
+                                <div style="margin-bottom: 8px;"><i class="fas fa-check-circle" style="color: #52c41a; margin-right: 8px;"></i><strong>版本升级：</strong>免费提供系统版本升级服务</div>
+                                <div style="margin-bottom: 8px;"><i class="fas fa-check-circle" style="color: #52c41a; margin-right: 8px;"></i><strong>安全补丁：</strong>及时推送安全漏洞修复</div>
+                                <div><i class="fas fa-check-circle" style="color: #52c41a; margin-right: 8px;"></i><strong>性能优化：</strong>定期系统性能调优服务</div>
                             </div>
                         </div>
                         
                         <div class="card" style="border-left: 4px solid #17a2b8;">
-                            <h4 style="color: #17a2b8;">📚 培训与知识转移</h4>
+                            <h4 style="color: #17a2b8;"><i class="fas fa-book" style="color: #17a2b8; margin-right: 8px;"></i>培训与知识转移</h4>
                             <div style="font-size: 14px; line-height: 1.6; color: #495057;">
-                                <div style="margin-bottom: 8px;">✅ <strong>用户培训：</strong>提供40小时系统操作培训</div>
-                                <div style="margin-bottom: 8px;">✅ <strong>管理员培训：</strong>20小时系统管理培训</div>
-                                <div style="margin-bottom: 8px;">✅ <strong>文档交付：</strong>完整的操作手册和技术文档</div>
-                                <div>✅ <strong>在线支持：</strong>提供在线培训视频和FAQ</div>
+                                <div style="margin-bottom: 8px;"><i class="fas fa-check-circle" style="color: #52c41a; margin-right: 8px;"></i><strong>用户培训：</strong>提供40小时系统操作培训</div>
+                                <div style="margin-bottom: 8px;"><i class="fas fa-check-circle" style="color: #52c41a; margin-right: 8px;"></i><strong>管理员培训：</strong>20小时系统管理培训</div>
+                                <div style="margin-bottom: 8px;"><i class="fas fa-check-circle" style="color: #52c41a; margin-right: 8px;"></i><strong>文档交付：</strong>完整的操作手册和技术文档</div>
+                                <div><i class="fas fa-check-circle" style="color: #52c41a; margin-right: 8px;"></i><strong>在线支持：</strong>提供在线培训视频和FAQ</div>
                             </div>
                         </div>
                         
                         <div class="card" style="border-left: 4px solid #dc3545;">
-                            <h4 style="color: #dc3545;">⚡ 应急响应机制</h4>
+                            <h4 style="color: #dc3545;"><i class="fas fa-bolt" style="color: #dc3545; margin-right: 8px;"></i>应急响应机制</h4>
                             <div style="font-size: 14px; line-height: 1.6; color: #495057;">
-                                <div style="margin-bottom: 8px;">✅ <strong>应急预案：</strong>制定完整的应急处理预案</div>
-                                <div style="margin-bottom: 8px;">✅ <strong>备用方案：</strong>提供系统备份和恢复方案</div>
-                                <div style="margin-bottom: 8px;">✅ <strong>现场支持：</strong>重大问题4小时内现场支持</div>
-                                <div>✅ <strong>损失保障：</strong>提供系统故障损失赔偿机制</div>
+                                <div style="margin-bottom: 8px;"><i class="fas fa-check-circle" style="color: #52c41a; margin-right: 8px;"></i><strong>应急预案：</strong>制定完整的应急处理预案</div>
+                                <div style="margin-bottom: 8px;"><i class="fas fa-check-circle" style="color: #52c41a; margin-right: 8px;"></i><strong>备用方案：</strong>提供系统备份和恢复方案</div>
+                                <div style="margin-bottom: 8px;"><i class="fas fa-check-circle" style="color: #52c41a; margin-right: 8px;"></i><strong>现场支持：</strong>重大问题4小时内现场支持</div>
+                                <div><i class="fas fa-check-circle" style="color: #52c41a; margin-right: 8px;"></i><strong>损失保障：</strong>提供系统故障损失赔偿机制</div>
                             </div>
                         </div>
                     </div>
                     
                     <div style="text-align: center; margin-top: 25px; padding: 20px; background: linear-gradient(135deg, #ffc107, #fd7e14); border-radius: 10px; color: white;">
-                        <h4 style="margin: 0; color: white;">🏆 全方位服务保障承诺</h4>
+                        <h4 style="margin: 0; color: white;"><i class="fas fa-trophy" style="color: white; margin-right: 8px;"></i>全方位服务保障承诺</h4>
                         <p style="margin: 10px 0 0 0; font-size: 16px; font-weight: bold;">专业团队+完善机制+长期支持，确保系统稳定运行，预期获得服务保障满分15分！</p>
                     </div>
                 </div>
             </div>
         </div>
         
+        <!-- 达梦文档数据库迁移与知识管理系统数据管道打通 -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon"><i class="fas fa-sync" style="color: #1890ff; font-size: 24px;"></i></div>
+                <span>达梦文档数据库迁移与知识管理系统数据管道打通</span>
+            </div>
+            <div class="section-content">
+                <div class="highlight-box" style="background: linear-gradient(135deg, #e8f5e8 0%, #d4edda 100%); border: 2px solid #28a745;">
+                    <h3 style="color: #28a745;"><i class="fas fa-chart-bar" style="color: #28a745; margin-right: 8px;"></i>达梦文档数据库迁移架构设计</h3>
+                    <div class="grid grid-2">
+                        <div class="card" style="border-left: 4px solid #28a745;">
+                            <h4 style="color: #28a745;"><i class="fas fa-database" style="color: #28a745; margin-right: 8px;"></i>数据迁移策略</h4>
+                            <div style="font-size: 14px; line-height: 1.6; color: #495057;">
+                                <div style="margin-bottom: 8px;"><i class="fas fa-check-circle" style="color: #52c41a; margin-right: 8px;"></i><strong>增量迁移：</strong>支持在线增量数据同步，零停机迁移</div>
+                                <div style="margin-bottom: 8px;"><i class="fas fa-check-circle" style="color: #52c41a; margin-right: 8px;"></i><strong>数据校验：</strong>MD5校验确保数据完整性和一致性</div>
+                                <div style="margin-bottom: 8px;"><i class="fas fa-check-circle" style="color: #52c41a; margin-right: 8px;"></i><strong>回滚机制：</strong>提供完整的数据回滚和恢复方案</div>
+                                <div><i class="fas fa-check-circle" style="color: #52c41a; margin-right: 8px;"></i><strong>性能优化：</strong>批量处理，支持TB级数据快速迁移</div>
+                            </div>
+                        </div>
+                        
+                        <div class="card" style="border-left: 4px solid #17a2b8;">
+                            <h4 style="color: #17a2b8;"><i class="fas fa-link" style="color: #17a2b8; margin-right: 8px;"></i>数据管道架构</h4>
+                            <div style="font-size: 14px; line-height: 1.6; color: #495057;">
+                                <div style="margin-bottom: 8px;"><i class="fas fa-check-circle" style="color: #52c41a; margin-right: 8px;"></i><strong>ETL流程：</strong>Extract-Transform-Load标准化数据处理</div>
+                                <div style="margin-bottom: 8px;"><i class="fas fa-check-circle" style="color: #52c41a; margin-right: 8px;"></i><strong>实时同步：</strong>基于CDC技术的实时数据变更捕获</div>
+                                <div style="margin-bottom: 8px;"><i class="fas fa-check-circle" style="color: #52c41a; margin-right: 8px;"></i><strong>数据清洗：</strong>智能数据清洗和格式标准化</div>
+                                <div><i class="fas fa-check-circle" style="color: #52c41a; margin-right: 8px;"></i><strong>监控告警：</strong>全链路数据流监控和异常告警</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card" style="margin-top: 20px; border-left: 4px solid #6f42c1;">
+                        <h4 style="color: #6f42c1;"><i class="fas fa-rocket" style="color: #6f42c1; margin-right: 8px;"></i>知识管理系统集成方案</h4>
+                        <div class="grid grid-3" style="margin-top: 15px;">
+                            <div style="font-size: 14px; line-height: 1.6; color: #495057;">
+                                <div style="margin-bottom: 8px;"><i class="fas fa-check-circle" style="color: #52c41a; margin-right: 8px;"></i><strong>统一接口：</strong>RESTful API统一数据访问接口</div>
+                            <div style="margin-bottom: 8px;"><i class="fas fa-check-circle" style="color: #52c41a; margin-right: 8px;"></i><strong>数据标准：</strong>制定统一的数据模型和元数据标准</div>
+                            <div><i class="fas fa-check-circle" style="color: #52c41a; margin-right: 8px;"></i><strong>权限同步：</strong>用户权限和组织架构同步机制</div>
+                            </div>
+                            <div style="font-size: 14px; line-height: 1.6; color: #495057;">
+                                <div style="margin-bottom: 8px;"><i class="fas fa-check-circle" style="color: #52c41a; margin-right: 8px;"></i><strong>版本管理：</strong>文档版本与知识库版本联动管理</div>
+                            <div style="margin-bottom: 8px;"><i class="fas fa-check-circle" style="color: #52c41a; margin-right: 8px;"></i><strong>搜索集成：</strong>全文检索引擎统一索引和搜索</div>
+                            <div><i class="fas fa-check-circle" style="color: #52c41a; margin-right: 8px;"></i><strong>工作流：</strong>文档审批流程与知识管理流程打通</div>
+                            </div>
+                            <div style="font-size: 14px; line-height: 1.6; color: #495057;">
+                                <div style="margin-bottom: 8px;"><i class="fas fa-check-circle" style="color: #52c41a; margin-right: 8px;"></i><strong>数据血缘：</strong>完整的数据血缘关系追踪</div>
+                            <div style="margin-bottom: 8px;"><i class="fas fa-check-circle" style="color: #52c41a; margin-right: 8px;"></i><strong>质量监控：</strong>数据质量实时监控和评估</div>
+                            <div><i class="fas fa-check-circle" style="color: #52c41a; margin-right: 8px;"></i><strong>备份恢复：</strong>自动化备份和灾难恢复机制</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="highlight-box" style="background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%); border: 2px solid #ffc107; margin-top: 30px;">
+                    <h3 style="color: #856404;"><i class="fas fa-bolt" style="color: #856404; margin-right: 8px;"></i>数据管道技术实现</h3>
+                    <div class="grid grid-2">
+                        <div class="card" style="border-left: 4px solid #ffc107;">
+                            <h4 style="color: #856404;"><i class="fas fa-tools" style="color: #856404; margin-right: 8px;"></i>技术组件选型</h4>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Apache Kafka</span>
+                                <span class="tech-tag">Apache Flink</span>
+                                <span class="tech-tag">DM CDC</span>
+                                <span class="tech-tag">Redis Stream</span>
+                                <span class="tech-tag">Elasticsearch</span>
+                                <span class="tech-tag">MinIO</span>
+                            </div>
+                            <div style="font-size: 14px; line-height: 1.6; color: #495057; margin-top: 15px;">
+                                <div style="margin-bottom: 8px;">✅ <strong>消息队列：</strong>Kafka保证数据传输可靠性</div>
+                                <div style="margin-bottom: 8px;">✅ <strong>流处理：</strong>Flink实时数据处理和转换</div>
+                                <div>✅ <strong>对象存储：</strong>MinIO存储大文件和附件</div>
+                            </div>
+                        </div>
+                        
+                        <div class="card" style="border-left: 4px solid #28a745;">
+                            <h4 style="color: #28a745;"><i class="fas fa-chart-line" style="color: #28a745; margin-right: 8px;"></i>性能指标保障</h4>
+                            <div class="stats-grid" style="margin-top: 15px;">
+                                <div class="stat-card">
+                                    <div class="stat-number">10GB/h</div>
+                                    <div class="stat-label">数据迁移速度</div>
+                                </div>
+                                <div class="stat-card">
+                                    <div class="stat-number">< 100ms</div>
+                                    <div class="stat-label">数据同步延迟</div>
+                                </div>
+                                <div class="stat-card">
+                                    <div class="stat-number">99.99%</div>
+                                    <div class="stat-label">数据一致性</div>
+                                </div>
+                                <div class="stat-card">
+                                    <div class="stat-number">7×24</div>
+                                    <div class="stat-label">不间断服务</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 系统未来知识数据AI应用层预留接口与模块设计 -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon"><i class="fas fa-robot" style="color: #1890ff; font-size: 24px;"></i></div>
+                <span>系统未来知识数据AI应用层预留接口与模块设计</span>
+            </div>
+            <div class="section-content">
+                <div class="highlight-box" style="background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border: 2px solid #2196f3;">
+                    <h3 style="color: #1565c0;"><i class="fas fa-lightbulb" style="color: #1565c0; margin-right: 8px; vertical-align: middle;"></i>AI应用层架构设计</h3>
+                    <div class="grid grid-3">
+                        <div class="card" style="border-left: 4px solid #2196f3;">
+                            <h4 style="color: #1565c0;"><i class="fas fa-code" style="color: #1565c0; margin-right: 8px; vertical-align: middle;"></i>AI接口预留设计</h4>
+                            <div style="font-size: 14px; line-height: 1.6; color: #495057;">
+                                <div style="margin-bottom: 8px;">✅ <strong>标准化API：</strong>RESTful + GraphQL双协议支持</div>
+                                <div style="margin-bottom: 8px;">✅ <strong>数据格式：</strong>JSON/XML/Protobuf多格式兼容</div>
+                                <div style="margin-bottom: 8px;">✅ <strong>认证授权：</strong>OAuth2.0 + API Key双重认证</div>
+                                <div>✅ <strong>限流控制：</strong>智能限流和熔断保护机制</div>
+                            </div>
+                        </div>
+                        
+                        <div class="card" style="border-left: 4px solid #4caf50;">
+                            <h4 style="color: #2e7d32;"><i class="fas fa-chart-bar" style="color: #2e7d32; margin-right: 8px; vertical-align: middle;"></i>数据服务层</h4>
+                            <div style="font-size: 14px; line-height: 1.6; color: #495057;">
+                                <div style="margin-bottom: 8px;">✅ <strong>数据抽取：</strong>支持结构化和非结构化数据提取</div>
+                                <div style="margin-bottom: 8px;">✅ <strong>特征工程：</strong>自动化特征提取和向量化</div>
+                                <div style="margin-bottom: 8px;">✅ <strong>数据标注：</strong>半自动化数据标注和质量评估</div>
+                                <div>✅ <strong>模型训练：</strong>分布式模型训练数据管道</div>
+                            </div>
+                        </div>
+                        
+                        <div class="card" style="border-left: 4px solid #ff9800;">
+                            <h4 style="color: #ef6c00;"><i class="fas fa-bullseye" style="color: #ef6c00; margin-right: 8px; vertical-align: middle;"></i>AI能力模块</h4>
+                            <div style="font-size: 14px; line-height: 1.6; color: #495057;">
+                                <div style="margin-bottom: 8px;">✅ <strong>NLP处理：</strong>文本分析、实体识别、情感分析</div>
+                                <div style="margin-bottom: 8px;">✅ <strong>知识图谱：</strong>实体关系抽取和知识推理</div>
+                                <div style="margin-bottom: 8px;">✅ <strong>智能问答：</strong>基于RAG的智能问答系统</div>
+                                <div>✅ <strong>内容生成：</strong>文档摘要和内容自动生成</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="highlight-box" style="background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%); border: 2px solid #9c27b0; margin-top: 30px;">
+                    <h3 style="color: #6a1b9a;"><i class="fas fa-rocket" style="color: #6a1b9a; margin-right: 8px; vertical-align: middle;"></i>AI应用场景规划</h3>
+                    <div class="grid grid-2">
+                        <div class="card" style="border-left: 4px solid #9c27b0;">
+                            <h4 style="color: #6a1b9a;"><i class="fas fa-search" style="color: #6a1b9a; margin-right: 8px; vertical-align: middle;"></i>智能搜索与推荐</h4>
+                            <div style="font-size: 14px; line-height: 1.6; color: #495057;">
+                                <div style="margin-bottom: 8px;">✅ <strong>语义搜索：</strong>基于向量数据库的语义相似度搜索</div>
+                                <div style="margin-bottom: 8px;">✅ <strong>智能推荐：</strong>个性化内容推荐和关联文档发现</div>
+                                <div style="margin-bottom: 8px;">✅ <strong>自动分类：</strong>文档智能分类和标签自动生成</div>
+                                <div>✅ <strong>重复检测：</strong>文档相似度检测和去重优化</div>
+                            </div>
+                        </div>
+                        
+                        <div class="card" style="border-left: 4px solid #e91e63;">
+                            <h4 style="color: #ad1457;"><i class="fas fa-edit" style="color: #ad1457; margin-right: 8px; vertical-align: middle;"></i>智能内容处理</h4>
+                            <div style="font-size: 14px; line-height: 1.6; color: #495057;">
+                                <div style="margin-bottom: 8px;">✅ <strong>自动摘要：</strong>长文档智能摘要和关键信息提取</div>
+                                <div style="margin-bottom: 8px;">✅ <strong>格式转换：</strong>智能文档格式转换和排版优化</div>
+                                <div style="margin-bottom: 8px;">✅ <strong>质量评估：</strong>文档质量自动评估和改进建议</div>
+                                <div>✅ <strong>多语言：</strong>多语言文档翻译和本地化处理</div>
+                            </div>
+                        </div>
+                        
+                        <div class="card" style="border-left: 4px solid #3f51b5;">
+                            <h4 style="color: #283593;"><i class="fas fa-robot" style="color: #283593; margin-right: 8px; vertical-align: middle;"></i>智能助手与问答</h4>
+                            <div style="font-size: 14px; line-height: 1.6; color: #495057;">
+                                <div style="margin-bottom: 8px;">✅ <strong>知识问答：</strong>基于文档库的智能问答系统</div>
+                                <div style="margin-bottom: 8px;">✅ <strong>写作助手：</strong>AI辅助写作和内容优化建议</div>
+                                <div style="margin-bottom: 8px;">✅ <strong>审核助手：</strong>文档合规性检查和风险识别</div>
+                                <div>✅ <strong>学习路径：</strong>个性化学习路径推荐</div>
+                            </div>
+                        </div>
+                        
+                        <div class="card" style="border-left: 4px solid #009688;">
+                            <h4 style="color: #00695c;"><i class="fas fa-chart-bar" style="color: #00695c; margin-right: 8px; vertical-align: middle;"></i>数据分析与洞察</h4>
+                            <div style="font-size: 14px; line-height: 1.6; color: #495057;">
+                                <div style="margin-bottom: 8px;">✅ <strong>使用分析：</strong>用户行为分析和使用模式挖掘</div>
+                                <div style="margin-bottom: 8px;">✅ <strong>趋势预测：</strong>内容热度预测和需求分析</div>
+                                <div style="margin-bottom: 8px;">✅ <strong>知识图谱：</strong>企业知识图谱构建和可视化</div>
+                                <div>✅ <strong>决策支持：</strong>基于数据的智能决策支持</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="highlight-box" style="background: linear-gradient(135deg, #e8f5e8 0%, #d4edda 100%); border: 2px solid #28a745; margin-top: 30px;">
+                    <h3 style="color: #28a745;"><i class="fas fa-tools" style="color: #28a745; margin-right: 8px; vertical-align: middle;"></i>技术实现方案</h3>
+                    <div class="grid grid-2">
+                        <div class="card" style="border-left: 4px solid #28a745;">
+                            <h4 style="color: #28a745;"><i class="fas fa-cog" style="color: #28a745; margin-right: 8px;"></i>AI技术栈</h4>
+                            <div class="tech-stack">
+                                <span class="tech-tag">TensorFlow</span>
+                                <span class="tech-tag">PyTorch</span>
+                                <span class="tech-tag">Transformers</span>
+                                <span class="tech-tag">LangChain</span>
+                                <span class="tech-tag">Vector DB</span>
+                                <span class="tech-tag">MLflow</span>
+                                <span class="tech-tag">Kubeflow</span>
+                                <span class="tech-tag">ONNX</span>
+                            </div>
+                        </div>
+                        
+                        <div class="card" style="border-left: 4px solid #17a2b8;">
+                            <h4 style="color: #17a2b8;"><i class="fas fa-chart-line" style="color: #17a2b8; margin-right: 8px;"></i>扩展性设计</h4>
+                            <div style="font-size: 14px; line-height: 1.6; color: #495057;">
+                                <div style="margin-bottom: 8px;">✅ <strong>微服务架构：</strong>AI服务模块化和容器化部署</div>
+                                <div style="margin-bottom: 8px;">✅ <strong>弹性扩展：</strong>基于负载的自动扩缩容机制</div>
+                                <div style="margin-bottom: 8px;">✅ <strong>模型管理：</strong>模型版本管理和A/B测试框架</div>
+                                <div>✅ <strong>监控运维：</strong>AI服务性能监控和异常告警</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+
+
+        <!-- 达梦文档数据库迁移与数据管道打通 -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon"><i class="fas fa-sync" style="color: #1890ff; font-size: 24px;"></i></div>
+                <span>达梦文档数据库迁移与知识管理系统数据管道打通</span>
+            </div>
+            <div class="section-content">
+                <div class="highlight-box" style="background: linear-gradient(135deg, #e8f5e8 0%, #d4edda 100%); border: 2px solid #28a745;">
+                    <h3 style="color: #28a745;"><i class="fas fa-rocket" style="color: #28a745; margin-right: 8px;"></i>数据迁移与管道打通整体方案</h3>
+                    <div class="grid grid-2">
+                        <div class="card" style="border-left: 4px solid #28a745;">
+                            <h4 style="color: #28a745;"><i class="fas fa-chart-bar" style="color: #28a745; margin-right: 8px;"></i>现有ECO系统数据迁移</h4>
+                            <div style="font-size: 14px; line-height: 1.6; color: #495057;">
+                                <div style="margin-bottom: 8px;">✅ <strong>数据评估：</strong>全面分析现有ECO文档数据结构</div>
+                                <div style="margin-bottom: 8px;">✅ <strong>格式转换：</strong>Word/PDF/Excel等格式批量转换</div>
+                                <div style="margin-bottom: 8px;">✅ <strong>数据清洗：</strong>去重、格式标准化、内容校验</div>
+                                <div>✅ <strong>增量同步：</strong>支持增量数据实时同步机制</div>
+                            </div>
+                        </div>
+                        
+                        <div class="card" style="border-left: 4px solid #17a2b8;">
+                            <h4 style="color: #17a2b8;"><i class="fas fa-bolt" style="color: #17a2b8; margin-right: 8px;"></i>达梦数据库集群架构</h4>
+                            <div style="font-size: 14px; line-height: 1.6; color: #495057;">
+                                <div style="margin-bottom: 8px;">✅ <strong>DM8主库：</strong>核心文档数据存储，支持ACID事务</div>
+                                <div style="margin-bottom: 8px;">✅ <strong>读写分离：</strong>主从复制架构，读写性能优化</div>
+                                <div style="margin-bottom: 8px;">✅ <strong>缓存层：</strong>达梦新云缓存，热点数据毫秒级响应</div>
+                                <div>✅ <strong>文档库：</strong>达梦新云文档型数据库，元数据管理</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="architecture-diagram">
+                    <h3><i class="fas fa-link" style="color: #1890ff; margin-right: 8px;"></i>数据管道架构流程图</h3>
+                    <div class="layers">
+                        <div class="layer">
+                            <div class="layer-title"><i class="fas fa-inbox" style="color: #52c41a; margin-right: 8px;"></i>数据源层 (Data Source Layer)</div>
+                            <div class="layer-desc">ECO系统、Office文档、PDF文件、外部API接口</div>
+                            <div class="layer-features">支持多种数据源格式，实时数据采集</div>
+                        </div>
+                        <div class="layer-arrow"><i class="fas fa-arrow-down" style="color: #1890ff; font-size: 20px;"></i></div>
+                        <div class="layer">
+                            <div class="layer-title"><i class="fas fa-sync" style="color: #fa8c16; margin-right: 8px;"></i>数据处理层 (ETL Processing Layer)</div>
+                            <div class="layer-desc">数据抽取、转换、清洗、格式标准化</div>
+                            <div class="layer-features">Apache Kafka + Spring Batch批处理引擎</div>
+                        </div>
+                        <div class="layer-arrow"><i class="fas fa-arrow-down" style="color: #1890ff; font-size: 20px;"></i></div>
+                        <div class="layer">
+                            <div class="layer-title"><i class="fas fa-database" style="color: #722ed1; margin-right: 8px;"></i>达梦存储层 (DM Database Cluster)</div>
+                            <div class="layer-desc">DM8关系型 + 达梦新云缓存 + 达梦新云文档型 + 达梦新云时序型</div>
+                            <div class="layer-features">四大数据库产品矩阵，高可用集群部署</div>
+                        </div>
+                        <div class="layer-arrow"><i class="fas fa-arrow-down" style="color: #1890ff; font-size: 16px;"></i></div>
+                        <div class="layer">
+                            <div class="layer-title"><i class="fas fa-search" style="color: #13c2c2; margin-right: 8px;"></i>数据服务层 (Data Service Layer)</div>
+                            <div class="layer-desc">RESTful API、GraphQL接口、实时搜索服务</div>
+                            <div class="layer-features">统一数据访问接口，支持多种查询方式</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid grid-3">
+                    <div class="card">
+                        <h3><i class="fas fa-clock" style="color: #1890ff; margin-right: 8px;"></i>迁移实施计划</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <h4>第1阶段：数据评估 (1周)</h4>
+                                <p>现有数据结构分析、迁移方案设计</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h4>第2阶段：环境搭建 (1周)</h4>
+                                <p>达梦数据库集群部署、ETL工具配置</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h4>第3阶段：数据迁移 (2周)</h4>
+                                <p>批量数据迁移、数据校验、性能调优</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h4>第4阶段：上线验收 (1周)</h4>
+                                <p>系统集成测试、用户验收、正式上线</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-shield-alt" style="color: #f5222d; margin-right: 8px;"></i>数据安全保障</h3>
+                        <div class="challenge-list">
+                            <div class="challenge-item">
+                                <div class="challenge-icon"><i class="fas fa-lock" style="color: #fa8c16; font-size: 20px;"></i></div>
+                                <div class="challenge-content">
+                                    <strong>传输加密</strong>
+                                    <p>SSL/TLS加密传输，确保数据传输安全</p>
+                                </div>
+                            </div>
+                            <div class="challenge-item">
+                                <div class="challenge-icon"><i class="fas fa-database" style="color: #722ed1; font-size: 20px;"></i></div>
+                                <div class="challenge-content">
+                                    <strong>存储加密</strong>
+                                    <p>达梦数据库透明加密，敏感数据保护</p>
+                                </div>
+                            </div>
+                            <div class="challenge-item">
+                                <div class="challenge-icon"><i class="fas fa-clock" style="color: #1890ff; font-size: 20px;"></i></div>
+                                <div class="challenge-content">
+                                    <strong>审计日志</strong>
+                                    <p>完整的数据操作审计，可追溯性保障</p>
+                                </div>
+                            </div>
+                            <div class="challenge-item">
+                                <div class="challenge-icon"><i class="fas fa-database" style="color: #52c41a; font-size: 20px;"></i></div>
+                                <div class="challenge-content">
+                                    <strong>备份恢复</strong>
+                                    <p>自动化备份策略，快速灾难恢复机制</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-chart-bar" style="color: #52c41a; margin-right: 8px;"></i>性能指标预期</h3>
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-number">10TB+</div>
+                                <div class="stat-label">数据迁移容量</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">< 100ms</div>
+                                <div class="stat-label">查询响应时间</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">99.9%</div>
+                                <div class="stat-label">数据一致性</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">24/7</div>
+                                <div class="stat-label">实时同步服务</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 系统未来知识数据AI应用层预留接口与模块设计 -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon"><i class="fas fa-robot" style="color: #1890ff; font-size: 24px;"></i></div>
+                <span>系统未来知识数据AI应用层预留接口与模块设计</span>
+            </div>
+            <div class="section-content">
+                <div class="highlight-box" style="background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%); border: 2px solid #007bff;">
+                    <h3 style="color: #007bff;"><i class="fas fa-lightbulb" style="color: #007bff; margin-right: 8px; vertical-align: middle;"></i>AI应用层整体架构设计</h3>
+                    <div class="grid grid-2">
+                        <div class="card" style="border-left: 4px solid #007bff;">
+                            <h4 style="color: #007bff;"><i class="fas fa-code" style="color: #007bff; margin-right: 8px; vertical-align: middle;"></i>AI服务接口层</h4>
+                            <div style="font-size: 14px; line-height: 1.6; color: #495057;">
+                                <div style="margin-bottom: 8px;">✅ <strong>RESTful API：</strong>标准化AI服务调用接口</div>
+                                <div style="margin-bottom: 8px;">✅ <strong>GraphQL：</strong>灵活的数据查询和聚合接口</div>
+                                <div style="margin-bottom: 8px;">✅ <strong>WebSocket：</strong>实时AI推理结果推送</div>
+                                <div>✅ <strong>gRPC：</strong>高性能内部服务通信协议</div>
+                            </div>
+                        </div>
+                        
+                        <div class="card" style="border-left: 4px solid #28a745;">
+                            <h4 style="color: #28a745;"><i class="anticon anticon-target" style="color: #28a745; margin-right: 8px;"></i>AI能力模块预留</h4>
+                            <div style="font-size: 14px; line-height: 1.6; color: #495057;">
+                                <div style="margin-bottom: 8px;">✅ <strong>NLP处理：</strong>自然语言理解与生成模块</div>
+                                <div style="margin-bottom: 8px;">✅ <strong>知识图谱：</strong>实体关系抽取与推理引擎</div>
+                                <div style="margin-bottom: 8px;">✅ <strong>智能问答：</strong>基于文档的问答系统</div>
+                                <div>✅ <strong>内容生成：</strong>自动摘要与文档生成</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="architecture-diagram">
+                    <h3><i class="fas fa-tools" style="color: #1890ff; margin-right: 8px; vertical-align: middle;"></i>AI应用层技术架构</h3>
+                    <div class="layers">
+                        <div class="layer">
+                            <div class="layer-title"><i class="anticon anticon-bg-colors" style="color: #eb2f96; margin-right: 8px;"></i>AI应用前端层 (AI Frontend Layer)</div>
+                            <div class="layer-desc">智能搜索界面、AI助手聊天、可视化分析面板</div>
+                            <div class="layer-features">React + TypeScript + AI组件库</div>
+                        </div>
+                        <div class="layer-arrow">⬇️</div>
+                        <div class="layer">
+                            <div class="layer-title"><i class="fas fa-link" style="color: #fa8c16; margin-right: 8px;"></i>AI网关层 (AI Gateway Layer)</div>
+                            <div class="layer-desc">API路由、负载均衡、请求限流、结果缓存</div>
+                            <div class="layer-features">Spring Cloud Gateway + Redis缓存</div>
+                        </div>
+                        <div class="layer-arrow">⬇️</div>
+                        <div class="layer">
+                            <div class="layer-title"><i class="fas fa-lightbulb" style="color: #52c41a; margin-right: 8px;"></i>AI服务层 (AI Service Layer)</div>
+                            <div class="layer-desc">NLP服务、知识图谱、推荐引擎、内容分析</div>
+                            <div class="layer-features">Python FastAPI + TensorFlow/PyTorch</div>
+                        </div>
+                        <div class="layer-arrow">⬇️</div>
+                        <div class="layer">
+                            <div class="layer-title"><i class="fas fa-chart-bar" style="color: #722ed1; margin-right: 8px;"></i>AI数据层 (AI Data Layer)</div>
+                            <div class="layer-desc">向量数据库、模型存储、训练数据、特征工程</div>
+                            <div class="layer-features">Milvus向量库 + 达梦数据库集群</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid grid-3">
+                    <div class="card">
+                        <h3><i class="fas fa-flask" style="color: #13c2c2; margin-right: 8px;"></i>AI功能预留清单</h3>
+                        <div class="challenge-list">
+                            <div class="challenge-item">
+                                <div class="challenge-icon"><i class="fas fa-search" style="color: #1890ff; font-size: 20px;"></i></div>
+                                <div class="challenge-content">
+                                    <strong>智能搜索</strong>
+                                    <p>语义搜索、意图识别、智能推荐</p>
+                                </div>
+                            </div>
+                            <div class="challenge-item">
+                                <div class="challenge-icon"><i class="fas fa-comments" style="color: #52c41a; font-size: 20px;"></i></div>
+                                <div class="challenge-content">
+                                    <strong>智能问答</strong>
+                                    <p>基于文档的自动问答、上下文理解</p>
+                                </div>
+                            </div>
+                            <div class="challenge-item">
+                                <div class="challenge-icon"><i class="fas fa-edit" style="color: #fa8c16; font-size: 20px;"></i></div>
+                                <div class="challenge-content">
+                                    <strong>内容生成</strong>
+                                    <p>自动摘要、文档模板、智能翻译</p>
+                                </div>
+                            </div>
+                            <div class="challenge-item">
+                                <div class="challenge-icon"><i class="fas fa-project-diagram" style="color: #722ed1; font-size: 20px;"></i></div>
+                                <div class="challenge-content">
+                                    <strong>知识图谱</strong>
+                                    <p>实体抽取、关系挖掘、知识推理</p>
+                                </div>
+                            </div>
+                            <div class="challenge-item">
+                                <div class="challenge-icon"><i class="fas fa-brain" style="color: #eb2f96; font-size: 20px;"></i></div>
+                                <div class="challenge-content">
+                                    <strong>智能分析</strong>
+                                    <p>数据挖掘、趋势分析、预测建模</p>
+                                </div>
+                            </div>
+                            <div class="challenge-item">
+                                <div class="challenge-icon"><i class="fas fa-magic" style="color: #13c2c2; font-size: 20px;"></i></div>
+                                <div class="challenge-content">
+                                    <strong>智能检索</strong>
+                                    <p>语义理解、多模态搜索、智能排序</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-cog" style="color: #fa8c16; margin-right: 8px;"></i>技术接口规范</h3>
+                        <div style="font-size: 14px; line-height: 1.6; color: #495057;">
+                            <div style="margin-bottom: 12px;"><strong><i class="fas fa-code" style="color: #1890ff; margin-right: 8px;"></i>API接口标准：</strong></div>
+                            <div style="margin-bottom: 8px;">• RESTful API设计规范</div>
+                            <div style="margin-bottom: 8px;">• OpenAPI 3.0文档标准</div>
+                            <div style="margin-bottom: 8px;">• JWT认证与权限控制</div>
+                            <div style="margin-bottom: 12px;">• 统一错误码与响应格式</div>
+                            
+                            <div style="margin-bottom: 12px;"><strong><i class="fas fa-chart-bar" style="color: #52c41a; margin-right: 8px;"></i>数据接口规范：</strong></div>
+                            <div style="margin-bottom: 8px;">• JSON Schema数据验证</div>
+                            <div style="margin-bottom: 8px;">• 分页查询标准化</div>
+                            <div style="margin-bottom: 8px;">• 实时数据推送协议</div>
+                            <div style="margin-bottom: 12px;">• 批量数据处理接口</div>
+                            
+                            <div style="margin-bottom: 12px;"><strong><i class="fas fa-shield-alt" style="color: #f5222d; margin-right: 8px;"></i>安全接口规范：</strong></div>
+                            <div style="margin-bottom: 8px;">• OAuth 2.0授权认证</div>
+                            <div style="margin-bottom: 8px;">• API密钥管理机制</div>
+                            <div style="margin-bottom: 8px;">• 请求签名验证</div>
+                            <div style="margin-bottom: 12px;">• 访问频率限制控制</div>
+                            
+                            <div style="margin-bottom: 12px;"><strong><i class="fas fa-cogs" style="color: #722ed1; margin-right: 8px;"></i>扩展接口规范：</strong></div>
+                            <div style="margin-bottom: 8px;">• 插件化架构支持</div>
+                            <div style="margin-bottom: 8px;">• 微服务接口标准</div>
+                            <div style="margin-bottom: 8px;">• 版本兼容性管理</div>
+                            <div style="margin-bottom: 12px;">• 第三方集成接口</div>
+                            
+                            <div style="margin-bottom: 12px;"><strong><i class="fas fa-exchange-alt" style="color: #13c2c2; margin-right: 8px;"></i>数据管道接口规范：</strong></div>
+                            <div style="margin-bottom: 8px;">• 已有系统数据源兼容适配</div>
+                            <div style="margin-bottom: 8px;">• 多格式数据转换支持</div>
+                            <div style="margin-bottom: 8px;">• 数据管道容错机制</div>
+                            <div style="margin-bottom: 8px;">• 断点续传与重试策略</div>
+                            <div style="margin-bottom: 8px;">• 数据一致性校验</div>
+                            <div>• 实时监控与异常告警</div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-rocket" style="color: #1890ff; margin-right: 8px;"></i>AI模块扩展性</h3>
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-number">10+</div>
+                                <div class="stat-label">预留AI模块</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">50+</div>
+                                <div class="stat-label">标准化接口</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">100%</div>
+                                <div class="stat-label">向后兼容性</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">云原生</div>
+                                <div class="stat-label">部署架构</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="highlight-box" style="background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%); border: 2px solid #ffc107; margin-top: 30px;">
+                    <h3 style="color: #856404;"><i class="fas fa-flask" style="color: #856404; margin-right: 8px;"></i>未来AI应用场景展望</h3>
+                    <div class="grid grid-2">
+                        <div class="card" style="border-left: 4px solid #ffc107;">
+                            <h4 style="color: #856404;"><i class="fas fa-chart-line" style="color: #856404; margin-right: 8px;"></i>短期目标 (6-12个月)</h4>
+                            <div style="font-size: 14px; line-height: 1.6; color: #495057;">
+                                <div style="margin-bottom: 8px;">✅ <strong>智能搜索：</strong>基于语义的文档搜索功能</div>
+                                <div style="margin-bottom: 8px;">✅ <strong>自动分类：</strong>文档智能分类与标签推荐</div>
+                                <div style="margin-bottom: 8px;">✅ <strong>内容摘要：</strong>长文档自动摘要生成</div>
+                                <div>✅ <strong>相似推荐：</strong>基于内容的相关文档推荐</div>
+                            </div>
+                        </div>
+                        
+                        <div class="card" style="border-left: 4px solid #28a745;">
+                            <h4 style="color: #28a745;"><i class="fas fa-rocket" style="color: #28a745; margin-right: 8px;"></i>长期规划 (1-2年)</h4>
+                            <div style="font-size: 14px; line-height: 1.6; color: #495057;">
+                                <div style="margin-bottom: 8px;">✅ <strong>智能问答：</strong>基于知识库的智能客服系统</div>
+                                <div style="margin-bottom: 8px;">✅ <strong>知识图谱：</strong>企业知识网络可视化</div>
+                                <div style="margin-bottom: 8px;">✅ <strong>智能写作：</strong>AI辅助文档创作与编辑</div>
+                                <div>✅ <strong>决策支持：</strong>基于数据的智能决策建议</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        
         <!-- 商务资质与团队优势 -->
         <div class="section">
             <div class="section-header">
-                <div class="section-icon">🏆</div>
+                <div class="section-icon"><i class="fas fa-trophy" style="color: #faad14; font-size: 24px;"></i></div>
                 <span>商务资质与团队优势</span>
             </div>
             <div class="section-content">
                 <div class="highlight-box" style="background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border: 2px solid #2196f3;">
-                    <h3 style="color: #1565c0;">📜 商务资质证书 (商务资质10分满分)</h3>
+                    <h3 style="color: #1565c0;"><i class="fas fa-file-text" style="color: #1565c0; margin-right: 8px;"></i>商务资质证书 (商务资质10分满分)</h3>
                     <div class="grid grid-3">
                         <div class="card" style="border-left: 4px solid #2196f3;">
-                            <h4 style="color: #1565c0;">🏢 企业资质认证</h4>
+                            <h4 style="color: #1565c0;"><i class="anticon anticon-bank" style="color: #1565c0; margin-right: 8px;"></i>企业资质认证</h4>
                             <div style="font-size: 14px; line-height: 1.6; color: #495057;">
                                 <div style="margin-bottom: 8px;">✅ <strong>高新技术企业：</strong>国家级高新技术企业认定</div>
                                 <div style="margin-bottom: 8px;">✅ <strong>软件企业：</strong>双软认证企业资质</div>
@@ -2664,7 +3402,7 @@
                         </div>
                         
                         <div class="card" style="border-left: 4px solid #4caf50;">
-                            <h4 style="color: #2e7d32;">🔐 信息安全资质</h4>
+                            <h4 style="color: #2e7d32;"><i class="fas fa-shield-alt" style="color: #2e7d32; margin-right: 8px;"></i>信息安全资质</h4>
                             <div style="font-size: 14px; line-height: 1.6; color: #495057;">
                                 <div style="margin-bottom: 8px;">✅ <strong>信息安全等保：</strong>三级等保备案证明</div>
                                 <div style="margin-bottom: 8px;">✅ <strong>涉密资质：</strong>涉密信息系统集成资质</div>
@@ -2674,7 +3412,7 @@
                         </div>
                         
                         <div class="card" style="border-left: 4px solid #ff9800;">
-                            <h4 style="color: #ef6c00;">🎖️ 行业荣誉奖项</h4>
+                            <h4 style="color: #ef6c00;"><i class="fas fa-trophy" style="color: #ef6c00; margin-right: 8px;"></i>行业荣誉奖项</h4>
                             <div style="font-size: 14px; line-height: 1.6; color: #495057;">
                                 <div style="margin-bottom: 8px;">✅ <strong>优秀供应商：</strong>连续3年优秀供应商奖</div>
                                 <div style="margin-bottom: 8px;">✅ <strong>创新奖项：</strong>省级科技创新奖</div>
@@ -2686,10 +3424,10 @@
                 </div>
                 
                 <div class="highlight-box" style="background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%); border: 2px solid #9c27b0; margin-top: 30px;">
-                    <h3 style="color: #6a1b9a;">👥 核心团队优势 (人员配置5分满分)</h3>
+                    <h3 style="color: #6a1b9a;"><i class="fas fa-users" style="color: #6a1b9a; margin-right: 8px;"></i>核心团队优势 (人员配置5分满分)</h3>
                     <div class="grid grid-2">
                         <div class="card" style="border-left: 4px solid #9c27b0;">
-                            <h4 style="color: #6a1b9a;">🎯 项目管理团队</h4>
+                            <h4 style="color: #6a1b9a;"><i class="anticon anticon-target" style="color: #6a1b9a; margin-right: 8px;"></i>项目管理团队</h4>
                             <div style="font-size: 14px; line-height: 1.6; color: #495057;">
                                 <div style="margin-bottom: 8px;">✅ <strong>项目经理：</strong>PMP认证，10年+项目管理经验</div>
                                 <div style="margin-bottom: 8px;">✅ <strong>技术经理：</strong>架构师认证，15年+技术经验</div>
@@ -2699,39 +3437,39 @@
                         </div>
                         
                         <div class="card" style="border-left: 4px solid #e91e63;">
-                            <h4 style="color: #ad1457;">💻 技术开发团队</h4>
+                            <h4 style="color: #ad1457;"><i class="anticon anticon-code" style="color: #ad1457; margin-right: 8px;"></i>技术开发团队</h4>
                             <div style="font-size: 14px; line-height: 1.6; color: #495057;">
-                                <div style="margin-bottom: 8px;">✅ <strong>前端团队：</strong>5名高级前端工程师</div>
-                                <div style="margin-bottom: 8px;">✅ <strong>后端团队：</strong>8名资深后端开发工程师</div>
-                                <div style="margin-bottom: 8px;">✅ <strong>数据库团队：</strong>3名达梦数据库专家</div>
-                                <div>✅ <strong>测试团队：</strong>4名专业测试工程师</div>
+                                <div style="margin-bottom: 8px;">✅ <strong>前端团队：</strong>2名高级前端工程师</div>
+                                <div style="margin-bottom: 8px;">✅ <strong>后端团队：</strong>4名资深后端开发工程师</div>
+                                <div style="margin-bottom: 8px;">✅ <strong>数据库团队：</strong>1名达梦数据库专家</div>
+                                <div>✅ <strong>测试团队：</strong>1名专业测试工程师</div>
                             </div>
                         </div>
                         
                         <div class="card" style="border-left: 4px solid #3f51b5;">
-                            <h4 style="color: #283593;">🔧 运维支持团队</h4>
+                            <h4 style="color: #283593;"><i class="fas fa-tools" style="color: #283593; margin-right: 8px;"></i>运维支持团队</h4>
                             <div style="font-size: 14px; line-height: 1.6; color: #495057;">
-                                <div style="margin-bottom: 8px;">✅ <strong>系统运维：</strong>3名Linux系统运维专家</div>
-                                <div style="margin-bottom: 8px;">✅ <strong>网络安全：</strong>2名网络安全工程师</div>
-                                <div style="margin-bottom: 8px;">✅ <strong>监控告警：</strong>2名监控运维工程师</div>
+                                <div style="margin-bottom: 8px;">✅ <strong>系统运维：</strong>2名Linux系统运维专家</div>
+                                <div style="margin-bottom: 8px;">✅ <strong>网络安全：</strong>1名网络安全工程师</div>
+                                <div style="margin-bottom: 8px;">✅ <strong>监控告警：</strong>1名监控运维工程师</div>
                                 <div>✅ <strong>应急响应：</strong>24小时应急响应团队</div>
                             </div>
                         </div>
                         
                         <div class="card" style="border-left: 4px solid #009688;">
-                            <h4 style="color: #00695c;">📚 培训服务团队</h4>
+                            <h4 style="color: #00695c;"><i class="fas fa-book" style="color: #00695c; margin-right: 8px;"></i>培训服务团队</h4>
                             <div style="font-size: 14px; line-height: 1.6; color: #495057;">
-                                <div style="margin-bottom: 8px;">✅ <strong>培训师：</strong>3名专业培训讲师</div>
-                                <div style="margin-bottom: 8px;">✅ <strong>文档编写：</strong>2名技术文档工程师</div>
-                                <div style="margin-bottom: 8px;">✅ <strong>客户服务：</strong>2名客户成功经理</div>
-                                <div>✅ <strong>售后支持：</strong>5名售后技术支持</div>
+                                <div style="margin-bottom: 8px;">✅ <strong>培训师：</strong>2名专业培训讲师</div>
+                                <div style="margin-bottom: 8px;">✅ <strong>文档编写：</strong>1名技术文档工程师</div>
+                                <div style="margin-bottom: 8px;">✅ <strong>客户服务：</strong>1名客户成功经理</div>
+                                <div>✅ <strong>售后支持：</strong>3名售后技术支持</div>
                             </div>
                         </div>
                     </div>
                     
                     <div style="text-align: center; margin-top: 25px; padding: 20px; background: linear-gradient(135deg, #9c27b0, #e91e63); border-radius: 10px; color: white;">
-                        <h4 style="margin: 0; color: white;">🏆 专业团队全方位保障</h4>
-                        <p style="margin: 10px 0 0 0; font-size: 16px; font-weight: bold;">35人专业团队，涵盖项目全生命周期，预期获得商务资质10分+人员配置5分满分！</p>
+                        <h4 style="margin: 0; color: white;"><i class="fas fa-trophy" style="color: white; margin-right: 8px;"></i>专业团队全方位保障</h4>
+                        <p style="margin: 10px 0 0 0; font-size: 16px; font-weight: bold;">8人研发团队+专业支持团队，涵盖项目全生命周期，预期获得商务资质10分+人员配置5分满分！</p>
                     </div>
                 </div>
             </div>
