@@ -40,6 +40,16 @@
             border-radius: 20px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
             backdrop-filter: blur(10px);
+            position: relative;
+        }
+
+        .header-logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 160px;
+            height: 160px;
+            object-fit: contain;
         }
 
         .header h1 {
@@ -1491,6 +1501,7 @@
     <div class="container">
         <!-- 页面标题 -->
         <div class="header">
+            <img src="logo.png" alt="达梦数据库" class="header-logo">
             <h1>达梦在线文档中心解决方案</h1>
             <div class="subtitle">基于DM8数据库的企业级文档管理平台，提供高效、安全、智能的文档服务</div>
             <div class="hero-highlights">
